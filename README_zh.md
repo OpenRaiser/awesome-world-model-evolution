@@ -859,6 +859,17 @@
 * RT-2: Vision-Language-Action Models, CoRL 2023.
 * GAIA-1: A Generative World Model for Autonomous Driving, arXiv 2023.
 * PaLM-E: An Embodied Multimodal Language Model, ICLR 2024.
+* Genie 3: An Infinite, Real-Time World Model, Google DeepMind Blog / arXiv 2025.
+* Matrix-Game 2.0: An Open-Source Real-Time and Streaming Interactive World Model, arXiv 2025.
+* HunyuanWorld 1.0: Generating Immersive, Explorable, and Interactive 3D Worlds, arXiv 2025.
+* Cosmos: World Foundation Model Platform for Physical AI, arXiv 2025.
+* Planning-oriented Autonomous Driving (UniAD), CVPR 2023 Best Paper.
+* V-JEPA: Video Joint Embedding Predictive Architecture, CVPR 2024 / Meta AI.
+* Mastering Diverse Domains through World Models, arXiv 2023.
+* WorldVLA: Towards Autoregressive Action World Model, arXiv 2025.
+* Advancing Open-source World Models (LingBot-World), arXiv 2026.
+* 3D-VLA: A 3D Vision-Language-Action Generative World Model, ICML 2024.
+* DriveVLM: The Convergence of Autonomous Driving and Large Vision-Language Models, CVPR 2024.
 
 </details>
 
@@ -882,6 +893,18 @@
 
 * WISE: A World Knowledge-Informed Semantic Evaluation for Text-to-Image Generation, arXiv 2025.
 * Are Video Models Ready as Zero-Shot Reasoners? An Empirical Study with the MME-COF Benchmark, arXiv 2025.
+* PhysDreamer: Physics-Based Interaction from Videos, ECCV 2024.
+* VBench: Comprehensive Benchmark for Video Generation Models, CVPR 2024.
+* UniSandbox: Does understanding inform generation in unified multimodal models? from analysis to path forward. arXiv 2025.
+* Rover: Benchmarking reciprocal cross-modal reasoning for omnimodal generation. arXiv 2025.
+* VR-Bench: Reasoning via video: The first evaluation of video models’ reasoning abilities through maze-solving tasks. arXiv 2025.
+* PhysBench: Benchmarking physical commonsense in video generation. arXiv 2024.
+* Tivibench: Benchmarking think-in-video reasoning for video generative models. arXiv 2025.
+* Weave: Unleashing and benchmarking the in-context interleaved comprehension and generation. arXiv 2025.
+* Thinking with video: Video generation as a promising multimodal reasoning paradigm. arXiv 2025.
+* V-reasonbench: Toward unified reasoning benchmark suite for video generation models. arXiv 2025.
+* GGbench: A geometric generative reasoning benchmark for unified multimodal models. arXiv 2025.
+* Tempviz: On the evaluation of temporal knowledge in text-to-image models. arXiv 2026.
 
 </details>
 
