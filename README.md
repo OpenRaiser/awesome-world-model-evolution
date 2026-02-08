@@ -734,6 +734,16 @@ Current state-of-the-art models are beginning to break down the barriers between
 * Scaling Transformer-Based Novel View Synthesis Models with Token Disentanglement and Synthetic Data, ICCV 2025.
 * NeRF-HuGS: Improved Neural Radiance Fields in Non-static Scenes Using Heuristics-Guided Segmentation, CVPR 2024.
 * RealFusion: 360° Reconstruction of Any Object from a Single Image, CVPR 2023.
+* Lift3D: Synthesize 3D Training Data by Lifting 2D GAN, CVPR 2023.
+* SKED: Sketch-guided Text-to-3D Editing, ICCV 2023.
+* ICE-G: Image Conditional Editing of 3D Gaussian Splats, NeurIPS 2024.
+* DDPO: Denoising Diffusion Policy Optimization, ICLR 2024.
+* AlignProp: Aligning Diffusion Models with Downstream Reward Functions, NeurIPS 2023.
+* R-DPO: Robust Direct Preference Optimization, arXiv 2024.
+* TTPO: Test-Time Policy Optimization, arXiv 2024.
+* SPO: Stepwise Preference Optimization, arXiv 2024.
+* Diffusion of Thoughts: Chain-of-Thought Reasoning in Diffusion Language Models, arXiv 2024.
+* LayoutPrompter: Awakening the Power of Large Language Models for Layout Generation, NeurIPS 2023.
 
 </details>
 
@@ -772,6 +782,28 @@ Current state-of-the-art models are beginning to break down the barriers between
 * TemporalMaxer: Maximize Temporal Context with only Max Pooling for Temporal Action Localization, ICCV 2023.
 * Contextual Object Detection with Multimodal Large Language Models, IJCV 2024.
 * ActionFormer: Localizing Moments of Actions with Transformers, ECCV 2022.
+* Ovi: Twin Backbone Cross-Modal Fusion for Audio-Video Generation, arXiv 2024.
+* UniForm: Unified Multi-view Fusion for 3D Object Detection, arXiv 2024.
+* VILA-U: Unified Foundation Model Integrating Visual Understanding and Generation, arXiv 2024.
+* NOVA-3DGS: No-Reference Objective Validation for 3D Gaussian Splatting, arXiv 2024.
+* ACDC: Autoregressive Coherent Multimodal Generation using Diffusion Correction, arXiv 2024.
+* DiCoDe: Diffusion-Compressed Deep Tokens for Autoregressive Video Generation, arXiv 2024.
+* HybridVLA: Collaborative Diffusion and Autoregression in a Unified Vision-Language-Action Model, arXiv 2024.
+* CausVid: From Slow Bidirectional to Fast Autoregressive Video Diffusion Models, arXiv 2024.
+* ARLON: Boosting Diffusion Transformers with Autoregressive Models for Long Video Generation, arXiv 2024.
+* AR-Diffusion: Asynchronous Video Generation with Auto-Regressive Diffusion, CVPR 2025.
+* Tar: Vision as a Dialect: Unifying Visual Understanding and Generation via Text-Aligned Representations, NeurIPS 2024.
+* MoonShot: Towards Controllable Video Generation and Editing with Multimodal Conditions, IJCV 2025.
+* CCEdit: Creative and Controllable Video Editing via Diffusion Models, CVPR 2024.
+* TATS: Long Video Generation with Time-Agnostic VQGAN and Time-Sensitive Transformer, ECCV 2022.
+* InteractVideo: User-Centric Interactive Video Generation with Anchor-Conditioned Diffusion Models, arXiv 2024.
+* HermesFlow: Seamlessly Closing the Gap in Multimodal Understanding and Generation, NeurIPS 2025.
+* VIMI: Grounding Video Generation through Multi-modal Instruction, EMNLP 2024.
+* VideoDPO: Alignment of Text-to-Video Diffusion Models via Direct Preference Optimization, arXiv 2024.
+* T2V-Turbo: Breaking the Quality Bottleneck of Text-to-Video Models with Mixed-Reward Feedback, NeurIPS 2024.
+* Video-STaR: Self-Training with Reward for Video Generation, arXiv 2024.
+* VPO: Video Preference Optimization, arXiv 2024.
+* VideoScore: Building Automatic Metrics to Simulate Fine-grained Human Feedback for Video Generation, EMNLP 2024.
 
 </details>
 
@@ -793,6 +825,44 @@ Significance: These models represent crucial technical achievements in understan
 * Neural Scene Flow Fields for Space-Time View Synthesis of Dynamic Scenes, CVPR 2021.
 * CoTracker: It is Better to Track Together, ECCV 2024.
 * GEN3C: 3D-Informed World-Consistent Video Generation with Precise Camera Control, 2024 (open release).
+* NVS-Solver: Video Diffusion Model as Zero-Shot Novel View Synthesizer, ICLR 2025.
+* ViVid-1-to-3: Novel View Synthesis with Video Diffusion Models, CVPR 2024.
+* Vivid-ZOO: Multi-View Video Generation with Diffusion Model, NeurIPS 2024.
+* Diffusion²: Dynamic 3D Content Generation via Score Composition of Video and Multi-view Diffusion Models, ICLR 2025.
+* RealCam-I2V: Real-World Image-to-Video Generation with Interactive Complex Camera Control, ICCV 2025.
+* ViewCrafter: Taming Video Diffusion Models for High-fidelity Novel View Synthesis, arXiv 2024.
+* EPiC: Efficient Video Camera Control Learning with Precise Anchor-Video Guidance, arXiv 2025.
+* CameraCtrl: Enabling Camera Control for Video Diffusion Models, CVPR 2024.
+* World-consistent Video Diffusion with Explicit 3D Modeling, CVPR 2025.
+* OmniView: An All-Seeing Diffusion Model for 3D and 4D View Synthesis, arXiv 2025.
+* PostCam: Camera-Controllable Novel-View Video Generation, arXiv 2025.
+* ViewDiff: 3D-Consistent Image Generation with Text-to-Image Models, CVPR 2024.
+* TC4D: Trajectory-Conditioned Text-to-4D Generation, ECCV 2024.
+* Diffusion as Shader: 3D-aware Video Diffusion for Versatile Video Generation Control, SIGGRAPH 2025.
+* 3DTrajMaster: Mastering 3D Trajectory for Multi-Entity Motion in Video Generation, ICLR 2025.
+* SV3D: Novel Multi-view Synthesis and 3D Generation from a Single Image using Latent Video Diffusion, CVPR 2024.
+* 4Diffusion: Multi-view Video Diffusion Model for 4D Generation, arXiv 2024.
+* Point-DynRF: Point-Based Dynamic Radiance Fields From a Monocular Video, WACV 2024.
+* Consistent4D: Consistent 360° Dynamic Object Generation from Monocular Video, ICLR 2024.
+* 4Dynamic: Text-to-4D Generation with Hybrid Priors, arXiv 2024.
+* DyBluRF: Dynamic Neural Radiance Fields from Blurry Monocular Video, arXiv 2023.
+* DynIBaR: Neural Dynamic Image-Based Rendering, CVPR 2023.
+* 4D-fy: Text-to-4D Generation Using Hybrid Score Distillation Sampling, CVPR 2024.
+* TiNeuVox: Fast Dynamic Radiance Fields with Time-Aware Neural Voxels, SIGGRAPH Asia 2022.
+* SV4D: Dynamic 3D Content Generation with Video Diffusion Models, CVPR 2024.
+* STAG4D: Spatial-Temporal Anchored Generative 4D Gaussians, arXiv 2024.
+* DreamGaussian4D: Generative 4D Gaussian Splatting, arXiv 2023.
+* Deformable 3D Gaussians for High-Fidelity Monocular Dynamic Scene Reconstruction, CVPR 2024.
+* CAT4D: Create Anything in 4D with Multi-View Video Diffusion Models, arXiv 2024.
+* Diffusion4D: Fast Spatial-temporal Consistent 4D Generation via Video Diffusion Models, arXiv 2024.
+* Tracking Everything Everywhere All at Once, ICCV 2023.
+* VGGSfM: Visual Geometry Grounded Deep Structure From Motion, CVPR 2024.
+* SpatialTracker: Tracking Any 2D Pixels in 3D Space, CVPR 2024.
+* MASt3R: Matching And Stereo 3D Reconstruction, arXiv 2024.
+* T2V-Turbo: Breaking the Quality Bottleneck of Video Generation with Mixed Reward Feedback, arXiv 2024.
+* VideoDPO: Direct Preference Optimization for Video Generation, arXiv 2024.
+* DR-Tune: Disentangled Representation Tuning for Subject-Driven Text-to-Image Generation, NeurIPS 2023.
+* InstructVideo: Instructing Video Diffusion Models with Human Feedback, CVPR 2024.
 
 </details>
 
@@ -814,8 +884,16 @@ Models that generate dynamic, spatially consistent virtual environments from lan
 <details>
 <summary><b>paper catalog</b></summary>
 
+* Sora: Video generation models as world simulators, OpenAI Technical Report, 2024.
+* Open-Sora: Democratizing Efficient Video Production for All, arXiv 2024/2025.
 * Runway Gen-3 Alpha, 2024 (Alpha).
 * Pika 1.0, 2023 (November).
+* CogVideoX: Text-to-Video Diffusion Models with An Expert Transformer, arXiv 2024.
+* Wan: Open and Advanced Large-Scale Video Generative Models, arXiv 2025.
+* HailuoAI / MiniMax Video-01: The "Sora-Level" Contender from China, 2024.
+* Hunyuan-Video: A Systematic Framework for Large Video Generation Models, arXiv 2024.
+* VideoCrafter2: Overcoming Data Limitations for High-Quality Video Diffusion Models, CVPR 2024.
+* LTX-Video: High-Resolution Video Generation with Latent Flow Matching, arXiv 2025.
 
 </details>
 
@@ -836,6 +914,17 @@ Models designed for robotic control and autonomous agents that must integrate pe
 * RT-2: Vision-Language-Action Models, CoRL 2023.
 * GAIA-1: A Generative World Model for Autonomous Driving, arXiv 2023.
 * PaLM-E: An Embodied Multimodal Language Model, ICLR 2024.
+* Genie 3: An Infinite, Real-Time World Model, Google DeepMind Blog / arXiv 2025.
+* Matrix-Game 2.0: An Open-Source Real-Time and Streaming Interactive World Model, arXiv 2025.
+* HunyuanWorld 1.0: Generating Immersive, Explorable, and Interactive 3D Worlds, arXiv 2025.
+* Cosmos: World Foundation Model Platform for Physical AI, arXiv 2025.
+* Planning-oriented Autonomous Driving (UniAD), CVPR 2023 Best Paper.
+* V-JEPA: Video Joint Embedding Predictive Architecture, CVPR 2024 / Meta AI.
+* Mastering Diverse Domains through World Models, arXiv 2023.
+* WorldVLA: Towards Autoregressive Action World Model, arXiv 2025.
+* Advancing Open-source World Models (LingBot-World), arXiv 2026.
+* 3D-VLA: A 3D Vision-Language-Action Generative World Model, ICML 2024.
+* DriveVLM: The Convergence of Autonomous Driving and Large Vision-Language Models, CVPR 2024.
 
 </details>
 
@@ -859,6 +948,21 @@ A true world model benchmark should evaluate:
 
 * WISE: A World Knowledge-Informed Semantic Evaluation for Text-to-Image Generation, arXiv 2025.
 * Are Video Models Ready as Zero-Shot Reasoners? An Empirical Study with the MME-COF Benchmark, arXiv 2025.
+* PhysDreamer: Physics-Based Interaction from Videos, ECCV 2024.
+* VBench: Comprehensive Benchmark for Video Generation Models, CVPR 2024.
+* UniSandbox: Does understanding inform generation in unified multimodal models? from analysis to path forward. arXiv 2025.
+* Rover: Benchmarking reciprocal cross-modal reasoning for omnimodal generation. arXiv 2025.
+* VR-Bench: Reasoning via video: The first evaluation of video models’ reasoning abilities through maze-solving tasks. arXiv 2025.
+* PhysBench: Benchmarking physical commonsense in video generation. arXiv 2024.
+* Tivibench: Benchmarking think-in-video reasoning for video generative models. arXiv 2025.
+* Weave: Unleashing and benchmarking the in-context interleaved comprehension and generation. arXiv 2025.
+* Thinking with video: Video generation as a promising multimodal reasoning paradigm. arXiv 2025.
+* V-reasonbench: Toward unified reasoning benchmark suite for video generation models. arXiv 2025.
+* GGbench: A geometric generative reasoning benchmark for unified multimodal models. arXiv 2025.
+* Tempviz: On the evaluation of temporal knowledge in text-to-image models. arXiv 2026.
+
+ ROVER，UniSandbox ,  PhysDreamer. VR-Bench , VBench ,PhysBench
+  TiViBench, WEAVE, Thinking with Video, V-ReasonBench, GGBench , TempViz
 
 </details>
 

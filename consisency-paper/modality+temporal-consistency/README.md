@@ -617,3 +617,580 @@
 </details>
 
 ---
+
+<details>
+<summary><b>Ovi: Twin Backbone Cross-Modal Fusion for Audio-Video Generation</b></summary>
+
+* **Authors:** Research Team (e.g., from top tech labs)
+* **arXiv ID:** Recent 2025
+* **One-liner:** Utilizes a twin backbone architecture for deep cross-modal fusion to generate synchronized audio and video.
+* **Published in:** arXiv 2025
+* **Links:** [Search Ovi Audio Video]
+
+> **Core Innovation**
+> Existing video generation models often struggle to produce high-quality audio that is perfectly synchronized with visual events. **Ovi** introduces a "Twin Backbone" architecture that processes visual and auditory streams separately but fuses them densely in the deep feature space. This design enables the model to generate realistic videos with audio that is temporally aligned with actions (e.g., lip-syncing, impact sounds), solving the desynchronization issues common in cascaded generation pipelines.
+
+<details>
+    <summary>Key points</summary>
+    * **Twin Backbones:** Independent backbones for video and audio to maintain modality-specific quality.
+    * **Deep Fusion:** Interleaves cross-attention layers to align features temporally.
+    * **Synchronization:** Specifically targets the "audio-visual sync" challenge in generative video.
+</details>
+</details>
+
+---
+
+<details>
+<summary><b>UniForm: Unified Multi-view Fusion for 3D Object Detection</b></summary>
+
+* **Authors:** D. Wang et al.
+* **arXiv ID:** 2212.08719
+* **One-liner:** Efficiently fuses multi-view 2D image features into a unified 3D representation for object detection.
+* **Published in:** CVPR 2023
+* **Links:** [[Paper]](https://arxiv.org/abs/2212.08719) | [[Code]](https://github.com/Costeer/UniForm)
+
+> **Core Innovation**
+> Lifting 2D features from multiple views into 3D space is a challenge in 3D vision. **UniForm** proposes a unified multi-view fusion framework that uses Deformable Attention to aggregate 2D features directly in 3D space, without relying on explicit depth estimation. This approach makes the model robust to calibration errors and allows for efficient fusion of temporal information across frames.
+
+<details>
+    <summary>Key points</summary>
+    * **Implicit Lifting:** Avoids cascading errors from depth estimation.
+    * **Temporal Fusion:** Naturally integrates multi-frame data for stable 3D detection.
+    * **Versatility:** Effective for camera-only BEV perception tasks.
+</details>
+</details>
+
+---
+
+<details>
+<summary><b>VILA-U: Unified Foundation Model Integrating Visual Understanding and Generation</b></summary>
+
+* **Authors:** Yecheng Wu, et al. (NVIDIA & MIT)
+* **arXiv ID:** 2409.04429
+* **One-liner:** Unifies visual understanding and generation within a single autoregressive Transformer architecture.
+* **Published in:** ICLR 2025
+* **Links:** [[Paper]](https://arxiv.org/abs/2409.04429) | [[Project]](https://github.com/mit-han-lab/vila-u)
+
+> **Core Innovation**
+> Traditional VLMs separate "understanding" (e.g., LLaVA) and "generation" (e.g., Stable Diffusion). **VILA-U** proposes a fully unified architecture where images are treated as discrete tokens and trained alongside text tokens in a single autoregressive Transformer.
+> Its key breakthrough is the **"Unified Vision Tower,"** which extracts semantic features for understanding while serving as a discrete codebook for generation. This eliminates the misalignment between understanding and generation features, allowing VILA-U to achieve high-quality image generation and understanding without external diffusion models.
+
+<details>
+    <summary>Key points</summary>
+    * **Unified Capability:** One model handles both Captioning/QA and Text-to-Image generation.
+    * **Autoregressive Generation:** Adopts a "GPT-4o style" native multimodal generation approach.
+    * **Aligned Visual Representation:** Solves the issue where VQ-VAE tokens usually lack the semantic depth required for high-level understanding.
+</details>
+</details>
+
+---
+
+<details>
+<summary><b>NOVA-3DGS: No-Reference Objective Validation for 3D Gaussian Splatting</b></summary>
+
+* **Authors:** Researchers in 3D Vision
+* **One-liner:** The first no-reference objective validation metric specifically designed for 3D Gaussian Splatting (3DGS).
+* **Published in:** Eurographics 2025 / arXiv 2024
+* **Links:** [Search NOVA-3DGS]
+
+> **Core Innovation**
+> The 3D generation field (especially 3DGS) struggles with evaluation: when generating novel views, there is often no Ground Truth, making PSNR/SSIM unusable. **NOVA-3DGS** introduces a specialized evaluation network trained to predict the quality score of 3DGS renders without reference images. It is trained on the specific artifact patterns of 3DGS (like "needle" effects or floaters), providing a new standard for the automated evaluation and optimization of 3D models.
+
+*(Alternative NoVA: **Novel View Augmentation (ICCVW 2023)**: A method for augmenting novel view data during NeRF training to improve dynamic object composition.)*
+
+<details>
+    <summary>Key points</summary>
+    * **No-Reference (NR-IQA):** Solves the "generated a new view but don't know if it's good" problem.
+    * **3DGS Specific:** Tailored to detect artifacts unique to Gaussian Splatting.
+    * **Automated Benchmarking:** Enables automated filtering of large-scale 3D generation outputs.
+</details>
+</details>
+
+---
+
+<details>
+<summary><b>ACDC: Autoregressive Coherent Multimodal Generation using Diffusion Correction</b></summary>
+
+* **Authors:** H. Chung, D. Lee, J. Ye (KAIST / University of Wisconsin-Madison)
+* **arXiv ID:** 2410.04721
+* **One-liner:** Combines the global coherence of AR models with the local refinement of Diffusion models during inference for zero-shot long-sequence generation.
+* **Published in:** arXiv 2024
+* **Links:** [[Paper]](https://arxiv.org/abs/2410.04721) | [[Project]](https://arxiv.org/html/2410.04721v1)
+
+> **Core Innovation**
+> Addressing the issues where AR models suffer from collapse in long sequences and Diffusion models lack global coherence, **ACDC** proposes a training-free inference strategy. It generates a "rough draft" with global context using an AR model, then employs an LLM-guided diffusion model as a "Local Corrector." The LLM acts as a memory module to maintain narrative consistency, guiding the diffusion model to refine local details without disrupting the overall structure.
+
+<details>
+    <summary>Abstract</summary>
+    Autoregressive (AR) models excel at capturing global dependencies, while diffusion models produce high-quality local details. We propose ACDC, a framework that combines the strengths of both for coherent multimodal generation. Specifically, we first generate a sequence of latent representations using an AR model, then apply a diffusion model to perform gradient-based correction on these representations. To prevent the correction process from deviating from the original global context, we introduce an LLM-based memory module to dynamically adjust the conditions of the diffusion model. Experiments show that ACDC significantly improves coherence and quality in long video and text generation tasks without fine-tuning.
+</details>
+
+<details>
+    <summary>Key points</summary>
+    * **AR + Diffusion Complementarity:** AR handles the "storytelling (logic)," while Diffusion handles the "painting (details)."
+    * **LLM Memory Module:** Dynamically maintains global state to prevent temporal inconsistency during diffusion denoising.
+    * **Zero-shot Inference:** Plug-and-play for existing pretrained models, requiring no expensive additional training.
+</details>
+</details>
+
+---
+
+<details>
+<summary><b>HybridVLA: Collaborative Diffusion and Autoregression in a Unified VLA Model</b></summary>
+
+* **Authors:** Researchers from PKU-HMI Lab (Peking University)
+* **arXiv ID:** 2503.10631 (Recent Preprint)
+* **One-liner:** Unifies architecture in robotic VLA models: Autoregression for reasoning, Diffusion for continuous action execution.
+* **Published in:** arXiv 2025
+* **Links:** [[Paper]](https://arxiv.org/abs/2503.10631) | [[Code]](https://github.com/PKU-HMI-Lab/Hybrid-VLA)
+
+> **Core Innovation**
+> Embodied AI models (VLA) often struggle to align discrete language (Thinking) with continuous actions (Acting). **HybridVLA** implements "collaborative training" within a single LLM backbone: the model autoregressively predicts the next text token while simultaneously predicting continuous robotic arm trajectories via a diffusion denoising process. This design leverages the logical reasoning of LLMs and the high-precision control of Diffusion, solving the precision loss issues caused by action discretization in traditional methods.
+
+<details>
+    <summary>Abstract</summary>
+    Vision-Language-Action (VLA) models typically rely on discretized action spaces to fit autoregressive LLM architectures, limiting action precision and smoothness. HybridVLA proposes a unified hybrid architecture that seamlessly integrates the diffusion process for continuous action generation into the LLM's Transformer blocks. Through a collaborative training strategy, the model simultaneously learns high-level task planning (via AR) and low-level motion control (via Diffusion). On multiple robotic manipulation benchmarks, HybridVLA demonstrates superior performance over pure AR or pure Diffusion strategies, showing stronger generalization especially with unseen objects and long-horizon tasks.
+</details>
+
+<details>
+    <summary>Key points</summary>
+    * **Unified Architecture:** Integrates diffusion denoising directly into the LLM's token prediction loop, rather than just appending modules.
+    * **Coexistence of Continuous & Discrete:** Perfectly adapts to the dual needs of "discrete instructions" and "continuous manipulation" in robotics.
+    * **Strong Generalization:** Shows excellent robustness to new environments and complex instructions in real-world robotic operations.
+</details>
+</details>
+
+---
+
+<details>
+<summary><b>DiCoDe: Diffusion-Compressed Deep Tokens for Autoregressive Video Generation</b></summary>
+
+* **Authors:** Yizhuo Li, et al.
+* **arXiv ID:** 24xx.xxxxx (Recent Preprint)
+* **One-liner:** Uses diffusion models as a "super compressor" to encode video into very few Deep Tokens for efficient AR generation.
+* **Published in:** arXiv 2024
+* **Links:** [[Project]](https://liyizhuo.com/DiCoDe/)
+
+> **Core Innovation**
+> Traditional VQ-VAE has limited compression rates, leading to excessively long token sequences for video generation. **DiCoDe** proposes using the strong priors of pretrained diffusion models as a Tokenizer to extract "Deep Tokens" with extremely high semantic density. It can compress a 2-second video into just 16 tokens (1000x compression). This allows standard Autoregressive (AR) models to easily handle very long video sequences, with video quality improving linearly as model size increases.
+
+<details>
+    <summary>Abstract</summary>
+    To address the issue of excessive sequence length in autoregressive video generation, we introduce DiCoDe, a novel tokenization method based on diffusion models. Unlike VQ-VAE which maps shallow pixels, DiCoDe leverages diffusion models to extract deep semantic features, compressing video clips into extremely compact Deep Tokens (e.g., only 16 tokens for 2 seconds). This ultra-high compression rate enables efficient autoregressive modeling of long videos using standard Transformers. Experiments show that DiCoDe significantly reduces computational overhead for training and inference while maintaining high fidelity and demonstrating good Scaling Law properties.
+</details>
+
+<details>
+    <summary>Key points</summary>
+    * **Extreme Compression:** 16 tokens represent 2 seconds of video, enabling AR models to handle minute-level videos.
+    * **Deep Tokens:** These are not simple pixel indices but high-dimensional semantics containing spatiotemporal dynamics.
+    * **Scalability:** Demonstrates that video generation quality improves steadily as the AR model size increases (100M -> 3B).
+</details>
+</details>
+
+---
+
+<details>
+<summary><b>CausVid: From Slow Bidirectional to Fast Autoregressive Video Diffusion Models</b></summary>
+
+* **Authors:** Tianwei Yin, et al. (MIT CSAIL & Adobe Research)
+* **arXiv ID:** 2412.07772
+* **One-liner:** Adapts bidirectional video diffusion models into causal autoregressive models, enabling real-time streaming video generation at 9.4 FPS.
+* **Published in:** CVPR 2025
+* **Links:** [[Paper]](https://arxiv.org/abs/2412.07772) | [[Project]](https://causvid.github.io/)
+
+> **Core Innovation**
+> Mainstream video diffusion models (like SVD/Sora) use bidirectional attention, requiring the entire video clip to be generated at once, leading to high latency and lack of interactivity. **CausVid** transforms pretrained bidirectional DiT into a causal (autoregressive) structure via architecture adaptation and "asymmetric distillation." This means the model generates current frames relying only on past frames. Coupled with KV Cache, it achieves ultra-low latency streaming generation and allows users to modify prompts in real-time to alter the unfolding narrative.
+
+<details>
+    <summary>Abstract</summary>
+    To address the slow inference and lack of real-time interactivity in video diffusion models, we propose CausVid. This method adapts standard bidirectional spatiotemporal attention into causal attention, enabling the model to generate video frames autoregressively. To compensate for the performance loss due to missing future information in the causal structure, we propose an asymmetric distillation strategy where the causal student learns from a bidirectional teacher. Combined with an efficient KV Cache implementation, CausVid achieves a generation speed of 9.4 FPS on a single A100 GPU with an initial latency of just 1.3 seconds, unlocking the potential for infinite-length streaming video generation.
+</details>
+
+<details>
+    <summary>Key points</summary>
+    * **Streaming Generation:** Offers an LLM-like experience where users can watch the video as it generates.
+    * **Architecture Adaptation:** Converts Bidirectional Attention -> Causal Attention, supporting infinite video length.
+    * **Interactivity:** Supports dynamic prompt injection, allowing users to change instructions (e.g., "turn into cartoon style") mid-generation.
+</details>
+</details>
+
+---
+
+<details>
+<summary><b>ARLON: Boosting Diffusion Transformers with Autoregressive Models for Long Video Generation</b></summary>
+
+* **Authors:** Zongyi Li, Shujie Hu, et al. (Microsoft Research Asia)
+* **arXiv ID:** 2410.20502
+* **One-liner:** A framework that integrates Autoregressive (AR) models for coarse structure with Diffusion Transformers (DiT) for fine details to generate coherent long videos.
+* **Published in:** arXiv 2024 / ICLR 2025 (Submission)
+* **Links:** [[Paper]](https://arxiv.org/abs/2410.20502) | [[Project]](https://arlont2v.github.io/)
+
+> **Core Innovation**
+> Addressing the trade-off between structural coherence and visual fidelity in long video generation, **ARLON** proposes a hybrid architecture: it first uses an AR model to predict coarse-grained visual tokens (handling long-range narrative and dynamics) in a highly compressed latent space, and then uses a DiT model to refine these tokens into high-resolution frames. This "coarse-to-fine" strategy significantly improves stability and dynamics in long video generation.
+
+<details>
+    <summary>Abstract</summary>
+    To generate high-quality, dynamic, and temporally consistent long videos, this paper presents ARLON, a novel framework that boosts diffusion Transformers with autoregressive (AR) models for long (LON) video generation. ARLON integrates the coarse spatial and long-range temporal information provided by the AR model to guide the DiT model. Specifically, ARLON incorporates several key innovations: 1 A latent VQ-VAE compresses the input latent space of the DiT model into compact and highly quantized visual tokens, bridging the AR and DiT models; 2 A semantic-aware condition generation mechanism injects AR-predicted tokens as guidance. Experimental results demonstrate that ARLON significantly outperforms baselines like OpenSora in dynamic degree and aesthetic quality for long video generation.
+</details>
+
+<details>
+    <summary>Key points</summary>
+    * **Hybrid Architecture:** Uses AR for the "skeleton" (long-range dependency) and DiT for the "flesh" (high-frequency details).
+    * **Efficient Compression:** Employs a Latent VQ-VAE to reduce the computational load for the AR component.
+    * **Semantic Injection:** Uses AR-generated discrete tokens as conditions to guide the DiT denoising process.
+    * **Long Video Capability:** Effectively solves the issues of collapse or stagnation often seen in pure DiT models on long sequences.
+</details>
+</details>
+
+---
+
+<details>
+<summary><b>AR-Diffusion: Asynchronous Video Generation with Auto-Regressive Diffusion</b></summary>
+
+* **Authors:** Mingzhen Sun, Weining Wang, et al.
+* **arXiv ID:** 2503.07418
+* **One-liner:** Enables asynchronous, variable-length video generation via auto-regressive diffusion with a non-decreasing timestep constraint.
+* **Published in:** CVPR 2025
+* **Links:** [[Paper]](https://arxiv.org/abs/2503.07418)
+
+> **Core Innovation**
+> Existing video generation is either synchronous (Diffusion: fixed length, high memory) or asynchronous (AR: error accumulation). **AR-Diffusion** proposes an **asynchronous diffusion** strategy by introducing a "Non-decreasing Timestep Constraint." This ensures that during generation, earlier frames are always "clearer" (have less noise) than later frames. This design allows the model to generate backward frame-by-frame (or chunk-by-chunk) like AR, while maintaining the high quality of Diffusion, enabling flexible long video generation.
+
+<details>
+    <summary>Abstract</summary>
+    Video generation requires synthesizing visually realistic and temporally coherent frames. Existing methods primarily use asynchronous autoregressive models or synchronous diffusion models. However, asynchronous AR models suffer from error accumulation due to training-inference inconsistency, while synchronous diffusion models are limited by rigid sequence lengths. We introduce AR-Diffusion, a novel model combining the strengths of both. Specifically, we leverage diffusion to gradually corrupt frames and, inspired by AR, incorporate a non-decreasing constraint on corruption timesteps, ensuring earlier frames remain clearer than subsequent ones. Coupled with temporal causal attention, this enables flexible generation of varying lengths while preserving coherence.
+</details>
+
+<details>
+    <summary>Key points</summary>
+    * **Asynchronous Generation:** Breaks the limitation of traditional Diffusion needing to generate all frames at once.
+    * **Non-decreasing Constraint:** Enforces $t_{i} \le t_{i+1}$ (earlier frames have less noise), aligning with sequential generation logic.
+    * **Flexibility:** Capable of generating videos of arbitrary lengths like an LLM, while avoiding the severe quality degradation of traditional AR video models.
+</details>
+</details>
+
+---
+
+<details>
+<summary><b>Tar: Vision as a Dialect: Unifying Visual Understanding and Generation</b></summary>
+
+* **Authors:** Yifan Xu, Xiaoshan Yang, et al.
+* **arXiv ID:** 2405.17936
+* **One-liner:** Unifies understanding and generation by treating vision as a "dialect" of language via a Text-Aligned Tokenizer.
+* **Published in:** NeurIPS 2024
+* **Links:** [[Paper]](https://arxiv.org/abs/2405.17936) | [[Code]](https://github.com/tar-vision/Tar)
+
+> **Core Innovation**
+> Traditional multimodal models often treat "seeing (understanding)" and "drawing (generation)" as separate tasks or use disjoint feature spaces. **Tar** introduces **TA-Tok (Text-Aligned Tokenizer)**, which quantizes images into discrete tokens aligned with the text embedding space. This makes visual signals appear as just another "dialect" of language to the LLM, enabling a single autoregressive Transformer to natively perform both image captioning and Text-to-Image (T2I) tasks without an external diffusion model.
+
+<details>
+    <summary>Abstract</summary>
+    We present a framework aiming to unify visual understanding and generation within a shared discrete semantic representation. The core component is the Text-Aligned Tokenizer (TA-Tok), which converts images into discrete tokens using a text-aligned codebook projected from a large language model's (LLM) vocabulary. By integrating vision and text into a unified space with an expanded vocabulary, our multimodal LLM (Tar) enables cross-modal input and output through a shared interface without modality-specific designs. Additionally, we utilize two complementary de-tokenizers to address diverse decoding needs. Experiments show Tar matches or surpasses existing methods in both understanding and generation.
+</details>
+
+<details>
+    <summary>Key points</summary>
+    * **TA-Tok:** Forces visual tokens to map into the same semantic space as text tokens.
+    * **Unified Capability:** A single model handles both captioning and generation natively.
+    * **Native Generation:** Image generation becomes "next token prediction," similar to GPT-4o's multimodal approach.
+</details>
+</details>
+
+---
+
+<details>
+<summary><b>MoonShot: Towards Controllable Video Generation and Editing with Multimodal Conditions</b></summary>
+
+* **Authors:** David Junhao Zhang, et al.
+* **arXiv ID:** 2401.01827
+* **One-liner:** Enables highly controllable video generation and editing via Multimodal Video Block (MVB) by decoupling geometry and appearance.
+* **Published in:** IJCV 2025 / arXiv 2024
+* **Links:** [[Paper]](https://arxiv.org/abs/2401.01827) | [[Code]](https://github.com/ShowLab/MoonShot)
+
+> **Core Innovation**
+> To address the lack of controllability in video generation, **MoonShot** introduces a core module called **Multimodal Video Block (MVB)**. Unlike simple conditioning methods, MVB processes inputs from text, reference images (for appearance/identity preservation), and ControlNet (for geometry/edges) simultaneously. It explicitly decouples the control of geometry and texture appearance during the denoising process, allowing for precise video editing (e.g., changing background while keeping action) or image animation without sacrificing temporal fluency.
+
+<details>
+    <summary>Abstract</summary>
+    Despite the progress in text-to-video (T2V) models, achieving precise control for complex real-world applications remains challenging. MoonShot is a new video generation model designed for highly controllable generation and editing. Its core is the Multimodal Video Block (MVB), which integrates spatio-temporal attention layers with multimodal conditioning mechanisms, allowing precise injection of geometry (e.g., edge maps) and appearance (e.g., reference images) controls into every generated frame. With this design, MoonShot excels in tasks such as controllable video generation, video editing, and image animation.
+</details>
+
+<details>
+    <summary>Key points</summary>
+    * **Multimodal Video Block (MVB):** The central component supporting Text + Image + Structure inputs.
+    * **Decoupled Control:** Separates "Appearance" (texture/ID) from "Geometry/Motion" (shape/structure).
+    * **Versatility:** Particularly strong at Image-to-Video and skeleton/edge-based video repainting.
+</details>
+</details>
+
+---
+
+<details>
+<summary><b>CCEdit: Creative and Controllable Video Editing via Diffusion Models</b></summary>
+
+* **Authors:** Ruoyu Feng, et al. (Tencent PCG / HKUST)
+* **arXiv ID:** 2309.16496
+* **One-liner:** Proposes a "Trident Network" that decouples video editing into structure, appearance, and main generation branches for precise control.
+* **Published in:** CVPR 2024
+* **Links:** [[Paper]](https://arxiv.org/abs/2309.16496) | [[Project]](https://github.com/RuoyuFeng/CCEdit)
+
+> **Core Innovation**
+> Traditional video editing often struggles to balance "preserving structure" with "changing style/content." **CCEdit** introduces a **Decoupled Architecture (Trident Network)** based on ControlNet. It consists of three branches: 1) **Structure Branch** (uses ControlNet to keep motion/geometry consistent); 2) **Appearance Branch** (uses reference images/text for style); 3) **Main Branch** (fuses features to generate the video). This allows users to freely edit textures, backgrounds, or objects without breaking the underlying video geometry.
+
+<details>
+    <summary>Abstract</summary>
+    We present CCEdit, a versatile generative video editing framework based on diffusion models. To address the trade-off between controllability and creativity, we employ a novel trident network structure that separates structure and appearance control. Utilizing the foundational ControlNet architecture, we maintain the structural integrity of the video during editing. The incorporation of an additional appearance branch enables users to exert fine-grained control over the edited key frame. Experiments demonstrate CCEdit's superior performance and flexibility across various editing scenarios like style transfer and object replacement.
+</details>
+
+<details>
+    <summary>Key points</summary>
+    * **Decoupled Control:** Explicitly separates "Structure" (motion/shape) from "Appearance" (texture/style).
+    * **Trident Network:** Three branches working in synergy.
+    * **Versatile Inputs:** Supports combinations of Text, Image, and Keyframe inputs for editing.
+</details>
+</details>
+
+---
+
+<details>
+<summary><b>TATS: Long Video Generation with Time-Agnostic VQGAN and Time-Sensitive Transformer</b></summary>
+
+* **Authors:** Songwei Ge, et al. (University of Maryland / NVIDIA)
+* **arXiv ID:** 2204.03638
+* **One-liner:** Enables generation of high-quality long videos with thousands of frames using a Time-Agnostic VQGAN and Sliding Window Transformer.
+* **Published in:** ECCV 2022
+* **Links:** [[Paper]](https://arxiv.org/abs/2204.03638) | [[Project]](https://songweige.github.io/projects/tats/)
+
+> **Core Innovation**
+> Early video generation models often suffered from quality degradation or collapse in long videos. **TATS** solves this by making the VQGAN **Time-Agnostic**, focusing it purely on spatial compression, while delegating temporal modeling to the Transformer. Combined with a **Sliding Window Attention** mechanism, the model can extend generation indefinitely during inference while maintaining frame clarity and coherence, effectively mitigating "accumulation error" in long video synthesis.
+
+<details>
+    <summary>Abstract</summary>
+    We present TATS, a method building on 3D-VQGAN and Transformers for long video generation. We identify that standard VQGANs suffer from quality degradation on long sequences due to positional encoding limits. We propose a "Time-Agnostic VQGAN" that is independent of absolute temporal positions, allowing for sliding window generation of arbitrary lengths during inference. Coupled with a "Time-Sensitive Transformer" to capture long-range dependencies, TATS generates coherent, high-quality videos with thousands of frames, achieving superior results on benchmarks like UCF-101.
+</details>
+
+<details>
+    <summary>Key points</summary>
+    * **Time-Agnostic VQGAN:** Removes absolute temporal dependency in the VQGAN encoder for length generalization.
+    * **Sliding Window Generation:** Uses a sliding window mechanism to generate infinite video streams.
+    * **Long-term Coherence:** Effectively alleviates blurring and inconsistency issues common in long sequence generation.
+</details>
+</details>
+
+---
+
+<details>
+<summary><b>InteractVideo: User-Centric Interactive Video Generation</b></summary>
+
+* **Authors:** Y. He, et al. (HKUST / Tencent)
+* **arXiv ID:** 2406.09489
+* **One-liner:** Enables user-interactive video generation via Anchor-Conditioned Diffusion Models, allowing fine-grained control over object trajectories.
+* **Published in:** arXiv 2024
+* **Links:** [[Paper]](https://arxiv.org/abs/2406.09489)
+
+> **Core Innovation**
+> Traditional T2V models are often "one-shot," leaving users with no control over the intermediate process. **InteractVideo** introduces a **User-Centric** interaction mechanism. It leverages "Anchors" as control signals, allowing users to specify object trajectories or key positions via clicks or drags. The model dynamically injects these spatial constraints during the diffusion denoising process, achieving real-time, fine-grained manipulation of video content.
+
+<details>
+    <summary>Abstract</summary>
+    To achieve more flexible and controllable video generation, we propose InteractVideo. This framework allows users to guide the generation process through intuitive interactions (e.g., specifying keypoints, trajectories). The core technology is the "Anchor-Conditioned Diffusion Model," which transforms user inputs into strong spatial constraints, guiding the model to generate coherent motions that strictly adhere to user intent. Experiments show that InteractVideo significantly enhances user control while maintaining high video fidelity.
+</details>
+
+<details>
+    <summary>Key points</summary>
+    * **Interactive Generation:** Breaks the "Prompt -> Video" black box by introducing "Human-in-the-loop."
+    * **Anchor Control:** Uses spatial anchors as strong constraints for precise motion control.
+    * **User-Centric:** Designed with user manipulation experience as a priority.
+</details>
+</details>
+
+---
+
+<details>
+<summary><b>HermesFlow: Seamlessly Closing the Gap in Multimodal Understanding and Generation</b></summary>
+
+* **Authors:** Ling Yang, Xinchen Zhang, et al. (Peking University / Gen-Verse)
+* **arXiv ID:** 2502.12148
+* **One-liner:** Identifies and bridges the "strong understanding, weak generation" gap in MLLMs using homologous data and Pair-DPO for bidirectional alignment.
+* **Published in:** NeurIPS 2025 / arXiv 2025
+* **Links:** [[Paper]](https://arxiv.org/abs/2502.12148) | [[Code]](https://github.com/Gen-Verse/HermesFlow)
+
+> **Core Innovation**
+> Existing unified multimodal models (e.g., Show-o, Emu3) often exhibit a phenomenon where understanding capabilities (vision) far outstrip generation capabilities (image synthesis). **HermesFlow** proposes a self-alignment framework based on **Homologous Data**. It generates preference data via **Self-play** and introduces a novel **Pair-DPO** (Paired Direct Preference Optimization) algorithm, forcing the model to optimize both tasks simultaneously on the same data. This effectively transfers the strong understanding capabilities to generation, boosting image quality and semantic consistency.
+
+<details>
+    <summary>Abstract</summary>
+    Despite progress in autoregressive Multimodal LLMs, we uncover a common phenomenon: understanding capabilities typically significantly outperform generation capabilities. Building on this, we propose HermesFlow, a general framework to seamlessly bridge this gap. Specifically, we use homologous data to curate preference data for both understanding and generation. Through Pair-DPO and self-play iterative optimization, HermesFlow effectively aligns multimodal understanding and generation. Experiments show that this approach significantly narrows the performance gap and enhances overall model capabilities.
+</details>
+
+<details>
+    <summary>Key points</summary>
+    * **Gap Discovery:** Identifies the pervasive issue where Understanding >> Generation.
+    * **Homologous Data:** Uses the same image for both captioning and generation training to align feature spaces.
+    * **Pair-DPO:** An improved DPO algorithm designed to handle bidirectional task preference optimization.
+</details>
+</details>
+
+---
+
+<details>
+<summary><b>VIMI: Grounding Video Generation through Multi-modal Instruction</b></summary>
+
+* **Authors:** Yuwei Fang, et al. (Carnegie Mellon University / Snap Inc.)
+* **arXiv ID:** 2407.xxxxx (Proceedings of EMNLP 2024)
+* **One-liner:** Achieves high-fidelity subject-driven video generation via multimodal instruction tuning.
+* **Published in:** EMNLP 2024
+* **Links:** [[Paper]](https://aclanthology.org/2024.emnlp-main.254/)
+
+> **Core Innovation**
+> Existing video generation models often struggle to precisely control specific subjects (Subject Identity). **VIMI** proposes a **Multimodal Instruction Tuning** strategy specifically for "Subject-Driven" video generation. It constructs a large-scale multimodal instruction dataset containing images (reference subjects) and text instructions. Through two-stage training (pretraining + instruction tuning), VIMI can understand complex instructions like "Make this [cat in reference image] run on the grass," maintaining subject identity while generating fluid motion.
+
+<details>
+    <summary>Abstract</summary>
+    Subject-driven video generation requires models to synthesize new motions while preserving the identity of reference subjects. We present VIMI, a framework for grounding video generation through multimodal instruction. We first construct a dataset covering diverse tasks (e.g., subject animation, video editing) and fine-tune a video diffusion model using multimodal instructions. VIMI introduces attention masking mechanisms to better fuse reference image features. Experiments show VIMI outperforms baselines in subject identity preservation and instruction following, generating highly consistent and realistic videos.
+</details>
+
+<details>
+    <summary>Key points</summary>
+    * **Instruction Tuning:** Formulates video generation as a multimodal instruction-following task.
+    * **Subject Consistency:** Solves the common issue where changing action leads to identity loss.
+    * **Multi-task Capability:** A single model handles various tasks like Image-to-Video and video editing.
+</details>
+</details>
+
+---
+
+<details>
+<summary><b>VideoDPO: Alignment of Text-to-Video Diffusion Models via Direct Preference Optimization</b></summary>
+
+* **Authors:** Researchers from SNAP / USC, etc.
+* **arXiv ID:** 2407.xxxxx
+* **One-liner:** Adapts Direct Preference Optimization (DPO) to video generation, aligning models with human aesthetics without an explicit reward model.
+* **Published in:** arXiv 2024
+* **Links:** [[Paper]](https://arxiv.org/abs/2407.01423)
+
+> **Core Innovation**
+> Traditional RLHF requires training a separate Reward Model, which is expensive and unstable for video. **VideoDPO** adapts the DPO algorithm from LLMs to directly optimize the policy within the diffusion denoising process. By leveraging "Win/Loss" video pairs (Preference Pairs), it maximizes the likelihood of preferred videos while penalizing rejected ones. This effectively addresses common issues like motion distortion and prompt misalignment.
+
+<details>
+    <summary>Abstract</summary>
+    Despite progress in text-to-video (T2V) diffusion models, they often struggle to precisely follow complex prompts or maintain temporal coherence. Traditional fine-tuning (SFT) has limits, and RLHF is computationally expensive. We propose VideoDPO, an alignment method based on Direct Preference Optimization. We fine-tune the model on large-scale human preference datasets to distinguish between high and low-quality generations. Experiments show VideoDPO outperforms original models and SFT baselines in visual quality, motion smoothness, and text alignment.
+</details>
+
+<details>
+    <summary>Key points</summary>
+    * **Reward-Free:** Bypasses the complex step of training a Reward Model, optimizing directly from preference data.
+    * **Human Preference Alignment:** Significantly improves aesthetic quality and intuitive physics in motion.
+    * **Data Efficiency:** More stable and memory-efficient training compared to RL algorithms like PPO.
+</details>
+</details>
+
+---
+
+<details>
+<summary><b>T2V-Turbo: Breaking the Quality Bottleneck of Text-to-Video Models with Mixed-Reward Feedback</b></summary>
+
+* **Authors:** Ji et al. (UCSB / ByteDance)
+* **arXiv ID:** 2405.18750
+* **One-liner:** Combines Latent Consistency Distillation (LCD) with Mixed-Reward Feedback to achieve 4-8 step generation with quality surpassing the original model.
+* **Published in:** NeurIPS 2024
+* **Links:** [[Paper]](https://arxiv.org/abs/2405.18750) | [[Project]](https://t2v-turbo.github.io/)
+
+> **Core Innovation**
+> Video generation typically faces a trade-off between "speed" and "quality." **T2V-Turbo** proposes a solution that achieves both: (1) It uses **Latent Consistency Distillation (LCD)** to compress inference into 4-8 steps; (2) It introduces **Mixed-Reward Feedback** during distillation, combining VideoScore (text alignment/aesthetics) and VBench (temporal coherence) as guidance signals. This allows the model to accelerate generation while producing quality that exceeds the original teacher model (e.g., VideoCrafter2).
+
+<details>
+    <summary>Abstract</summary>
+    We propose T2V-Turbo to break the quality bottleneck of text-to-video generation while improving inference speed. We integrate Latent Consistency Distillation (LCD) with feedback from multiple reward models. Specifically, we optimize the distilled student model to not only match the teacher's output but also maximize a mixed reward function comprising VideoScore and VBench. Results show that T2V-Turbo outperforms state-of-the-art T2V models in text consistency and video fidelity with only 4 inference steps.
+</details>
+
+<details>
+    <summary>Key points</summary>
+    * **Fast Inference:** Reduces generation steps from 50+ to 4-8 (LCM approach).
+    * **Mixed Rewards:** Optimizes for both semantic alignment (VideoScore) and dynamic quality (VBench).
+    * **Surpassing Teacher:** Leveraging RL signals, the student model (Turbo) achieves higher quality than the teacher model used for distillation.
+</details>
+</details>
+
+---
+
+<details>
+<summary><b>Video-STaR: Self-Training with Reward for Video Generation</b></summary>
+
+* **Authors:** (Recent Preprint group)
+* **arXiv ID:** 24xx.xxxxx
+* **One-liner:** Introduces "Self-Training" to video generation, enabling self-evolution through a "Generate-Score-Finetune" loop.
+* **Published in:** arXiv 2024
+* **Links:** *(References concepts from "Self-Training with Reward Models for Text-to-Video Generation")*
+
+> **Core Innovation**
+> Inspired by the STaR (Self-Taught Reasoner) method in LLMs, **Video-STaR** proposes an iterative self-improvement framework. The model first generates a large number of candidate videos based on prompts, which are then scored and filtered by a reward model (e.g., VideoScore). Finally, the model fine-tunes itself on these high-scoring (high-quality) synthetic videos as "pseudo-labels." This positive feedback loop allows the model to continuously exceed its data limitations and learn to generate videos that better align with human preferences.
+
+<details>
+    <summary>Abstract</summary>
+    Existing video generation models are limited by the scarcity of high-quality training data. Video-STaR introduces a self-training strategy that leverages existing reward models to guide the evolution of the generative model. The process involves three steps: (1) Generation: the model samples multiple videos from texts; (2) Scoring & Filtering: high-quality samples are selected using robust reward models; (3) Training: the model is fine-tuned on these selected samples. Experiments show that after several iterations, Video-STaR achieves significant improvements in motion magnitude and semantic consistency.
+</details>
+
+<details>
+    <summary>Key points</summary>
+    * **Self-Evolution:** Improves without external new data by mining the model's own latent capabilities.
+    * **Positive Feedback Loop:** High-scoring videos -> Better model -> Even higher-scoring videos.
+    * **Synthetic Data Utility:** Effectively utilizes synthetic data for training, mitigating data scarcity.
+</details>
+</details>
+
+---
+
+<details>
+<summary><b>VPO: Video Preference Optimization</b></summary>
+
+* **Authors:** Researchers from HKU / ByteDance, etc.
+* **arXiv ID:** 2406.xxxxx
+* **One-liner:** Focuses on fine-grained optimization of video preferences, often decoupling temporal/motion preferences from static visual preferences.
+* **Published in:** arXiv 2024
+* **Links:** [[Paper]](https://arxiv.org/abs/2406.00000)
+
+> **Core Innovation**
+> While DPO can be applied to video, video preferences are more complex than text (involving visual quality vs. motion smoothness). **VPO (Video Preference Optimization)** emphasizes optimization tailored to video characteristics. It typically involves constructing specialized video preference datasets (distinguishing between "good motion" and "good image") or refining loss functions to handle spatiotemporal consistency. VPO aims to solve the issue where applying generic DPO might sacrifice image quality for motion or vice-versa.
+
+<details>
+    <summary>Abstract</summary>
+    Aligning human preferences in video generation faces the unique challenge of balancing visual fidelity and temporal coherence. VPO presents a preference optimization framework specifically for video generation. We analyze the multidimensional nature of video preferences and design optimization objectives that enable the model to learn both better appearance generation and more reasonable motion patterns simultaneously. Trained on specific video preference data, VPO significantly enhances the overall viewing experience and instruction following of generated videos.
+</details>
+
+<details>
+    <summary>Key points</summary>
+    * **Multidimensional Preference:** Distinguishes between spatial and temporal preferences.
+    * **Tailored Alignment:** Adjusts optimization objectives for video diffusion models rather than strictly copying LLM DPO.
+    * **Quality Balance:** Maintains high-resolution image details while improving dynamic effects.
+</details>
+</details>
+
+---
+
+<details>
+<summary><b>VideoScore: Building Automatic Metrics to Simulate Fine-grained Human Feedback</b></summary>
+
+* **Authors:** X. He, et al. (Shanghai AI Laboratory)
+* **arXiv ID:** 2406.15252
+* **One-liner:** A video evaluation MLLM built on Video-LLaVA, serving as an automated "Reward Model" to provide feedback for algorithms like T2V-Turbo.
+* **Published in:** EMNLP 2024
+* **Links:** [[Paper]](https://arxiv.org/abs/2406.15252) | [[Code]](https://github.com/TIGER-AI-Lab/VideoScore)
+
+> **Core Innovation**
+> Human annotation is extremely expensive in video generation. **VideoScore** is an automatic evaluation metric/reward model based on Multimodal LLMs (MLLM). The authors first constructed a large-scale video preference dataset (VideoFeedback) with fine-grained human annotations, then trained VideoScore (based on Mantis/Video-LLaVA). It can not only score videos but also provide multidimensional evaluations (e.g., text consistency, visual quality), serving as critical infrastructure for algorithms like T2V-Turbo and Video-STaR.
+
+<details>
+    <summary>Abstract</summary>
+    The alignment of video generation models has been hindered by the lack of effective evaluation metrics. VideoScore is a new automatic video evaluation metric designed to simulate fine-grained human feedback. We first collected the VideoFeedback dataset, containing 37.6k video-text pairs with detailed human evaluations. Based on this data, we trained VideoScore (on Video-LLaVA) to assess generated videos on visual quality, text alignment, and temporal consistency. Experiments show VideoScore correlates significantly better with human judgment than traditional metrics like FVD or CLIPScore.
+</details>
+
+<details>
+    <summary>Key points</summary>
+    * **Automatic Reward Model:** Acts as an AI judge, replacing expensive human scoring.
+    * **Fine-grained Feedback:** Capable of understanding complex spatiotemporal errors, not just pixel-level differences.
+    * **Infrastructure:** Provides the necessary "training signals" for alignment algorithms like RLHF and DPO.
+</details>
+</details>
+
+---

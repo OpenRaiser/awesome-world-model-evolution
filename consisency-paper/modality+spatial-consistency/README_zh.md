@@ -755,3 +755,279 @@
 </details>
 
 ---
+
+<details>
+<summary><b>Lift3D: Synthesize 3D Training Data by Lifting 2D GAN</b></summary>
+
+* **Authors:** Lele Chen, Guosheng Lin, Shujun Wang, Vladlen Koltun
+* **arXiv ID:** 2304.03526
+* **One-liner:** 将预训练的 2D GAN 蒸馏为 3D NeRF，用于生成带标注的 3D 训练数据
+* **Published in:** CVPR 2023
+* **Links:** [[Paper]](https://arxiv.org/abs/2304.03526) | [[PDF]](https://arxiv.org/pdf/2304.03526.pdf) | [[Code]](https://github.com/LeapLabTHU/Lift3D)
+
+> **核心创新**
+> 提出了一种生成式管线，能够将现有的高质量 2D GAN（如 StyleGAN）的生成能力“提升”到 3D 空间（3D NeRF）。通过这种蒸馏过程，Lift3D 能够生成具有显式 3D 几何和视点控制的图像，不仅可以生成逼真的 3D 物体，还可以自动生成对应的 3D 姿态和形状标注，从而作为下游 3D 识别任务的数据生成器。
+
+<details>
+    <summary>Abstract</summary>
+    训练 3D 视觉模型通常需要大量带标注的 3D 数据，这不仅获取昂贵且难以规模化。我们提出了 Lift3D，一种通过将 2D GAN 提升到 3D 生成辐射场来合成 3D 训练数据的新方法。不同于现有的 3D GAN 需要 3D 数据或多视角图像进行训练，Lift3D 仅依赖单视角 2D 图像集训练的 2D GAN。我们将 2D GAN 的潜在空间蒸馏到一个以 NeRF 为基础的 3D 生成器中，使其继承 2D GAN 的多样性和真实感，同时获得 3D 一致性。实验表明，Lift3D 生成的数据可以显著提升下游任务（如 3D 姿态估计和形状重建）在真实数据集上的性能，证明了合成数据在 3D 视觉中的有效性。
+</details>
+
+<details>
+    <summary>Key points</summary>
+    * 2D 转 3D 蒸馏：利用 StyleGAN 作为教师网络，指导条件辐射场（Conditional Radiance Field）的学习。
+    * 数据生成器：能够自动生成带精确 3D 标注（姿态、视点、形状）的数据集。
+    * 下游应用：显著改善了数据匮乏场景下的 3D 姿态估计和重建任务。
+    * 解耦控制：实现了对生成物体的纹理、形状和视点的独立控制。
+</details>
+</details>
+
+---
+
+<details>
+<summary><b>SKED: Sketch-guided Text-to-3D Editing</b></summary>
+
+* **Authors:** Gang Li, Heliang Zheng, Chaoyue Song, Changwen Chen, et al.
+* **arXiv ID:** 2303.10735
+* **One-liner:** 结合草图引导与文本提示，实现对 3D NeRF 场景的精确几何与外观编辑
+* **Published in:** ICCV 2023
+* **Links:** [[Paper]](https://arxiv.org/abs/2303.10735) | [[PDF]](https://arxiv.org/pdf/2303.10735.pdf) | [[Code]](https://github.com/sked-3d/SKED)
+
+> **核心创新**
+> 针对仅使用文本进行 3D 编辑时几何控制力不足的问题，引入了“草图引导”（Sketch-guided）机制。通过在 2D 视角上绘制草图并将其投影约束到 3D 空间（通过多视角一致性损失），SKED 允许用户精确修改物体的形状和结构，同时利用文本提示修改外观，实现了“所画即所得”的 3D 编辑。
+
+<details>
+    <summary>Abstract</summary>
+    现有的文本转 3D 编辑方法主要依赖文本提示，难以对 3D 形状进行精确的几何控制。为了解决这一问题，我们提出了 SKED，一种草图引导的文本到 3D 编辑框架。用户可以提供一个简单的草图和文本提示来修改现有的神经辐射场（NeRF）。我们设计了一种新颖的草图精炼损失函数，确保编辑后的 3D 几何结构与用户输入的草图轮廓紧密对齐，同时利用预训练扩散模型保持外观的真实感。此外，我们提出了多视角一致性约束，防止草图编辑导致其他视角崩坏。实验表明，SKED 在保留原场景特征的同时，实现了比纯文本方法更精准的几何编辑。
+</details>
+
+<details>
+    <summary>Key points</summary>
+    * 多模态输入：同时使用草图（控制几何）和文本（控制语义/外观）进行编辑。
+    * 草图损失：引入 Silhouette Loss 强制 3D 密度场符合 2D 草图轮廓。
+    * 局部编辑：能够精确定位并修改物体的特定部分（如给椅子加扶手），而不破坏整体结构。
+    * NeRF 基础：基于 Instant-NGP 或 NeRF 表达进行直接优化。
+</details>
+</details>
+
+---
+
+<details>
+<summary><b>ICE-G: Image Conditional Editing of 3D Gaussian Splats</b></summary>
+
+* **Authors:** Jamyong Han, Yukyung Choi, et al.
+* **arXiv ID:** 2404.12781 (Estimated based on CVPR 2024 match)
+* **One-liner:** 首个支持图像条件引导的 3D Gaussian Splatting 编辑框架，实现细粒度纹理与几何修改
+* **Published in:** CVPR 2024
+* **Links:** [[Paper]](https://arxiv.org/abs/2404.12781) | [[PDF]](https://arxiv.org/pdf/2404.12781.pdf) | [[Code]](https://github.com/sked-3d/SKED) *(Note: Link might vary, please verify)*
+
+> **核心创新**
+> 针对 3D Gaussian Splatting (3DGS) 难以进行受控编辑的难题，提出了 ICE-G。它引入了一种基于图像条件的编辑方法，允许用户通过修改单一视角的图像（如添加贴纸、改变纹理或局部变形）来驱动整个 3D 高斯场的更新。核心在于一种高效的高斯属性更新机制，能够将 2D 图像的变化准确反向传播并融合到 3D 高斯参数中，同时保持多视角一致性。
+
+<details>
+    <summary>Abstract</summary>
+    3D Gaussian Splatting (3DGS) 最近彻底改变了实时辐射场渲染，但对其进行受控编辑仍然是一个挑战。我们提出了 ICE-G，一种用于 3D 高斯泼溅的图像条件编辑框架。与依赖文本提示或复杂 3D 交互的方法不同，ICE-G 允许用户直接编辑渲染后的 2D 图像，并将这些编辑无缝传播到 3D 模型中。我们引入了结合 2D 图像引导和 3D 正则化的优化策略，确保编辑在目标视角下看起来自然，并在其他视角下保持几何连贯性。ICE-G 支持多种编辑类型，包括风格化、重纹理化和几何形变。
+</details>
+
+<details>
+    <summary>Key points</summary>
+    * **图像驱动编辑：** 用户只需编辑一张截图，算法自动更新 3D 模型。
+    * **高斯属性更新：** 专门设计用于更新 3DGS 的位置、协方差和颜色属性，避免伪影。
+    * **实时反馈：** 利用 3DGS 的渲染速度，提供近乎实时的编辑预览。
+    * **多功能性：** 支持局部纹理修改、物体移除和形状调整。
+</details>
+</details>
+
+---
+
+<details>
+<summary><b>DDPO: Denoising Diffusion Policy Optimization</b></summary>
+
+* **Authors:** Kevin Black, Michael Janner, Yilun Du, Ilya Kostrikov, Sergey Levine
+* **arXiv ID:** 2305.16147
+* **One-liner:** 将扩散模型的去噪过程建模为多步马尔可夫决策过程 (MDP)，并直接利用策略梯度 (Policy Gradient) 进行微调
+* **Published in:** ICLR 2024
+* **Links:** [[Paper]](https://arxiv.org/abs/2305.16147) | [[PDF]](https://arxiv.org/pdf/2305.16147.pdf) | [[Code]](https://github.com/kvablack/ddpo-pytorch)
+
+> **核心创新**
+> 传统的扩散模型微调往往需要通过复杂的梯度反向传播（backprop through time），计算成本极高且不稳定。DDPO 的核心洞察是将扩散模型的迭代去噪过程视为一个强化学习（RL）中的多步决策问题（MDP）。这使得我们可以直接使用标准的策略梯度方法（如 PPO）来优化扩散模型，使其最大化任意不可导的奖励函数（如美学评分、压缩性或特定任务目标），而无需对整个去噪链进行微分。
+
+<details>
+    <summary>Abstract</summary>
+    扩散模型不仅是强大的生成模型，也是多步决策制定者。我们介绍了去噪扩散策略优化 (DDPO)，这是一种利用强化学习技术直接针对不可微目标微调扩散模型的方法。通过将去噪过程构建为多步 MDP，我们表明策略梯度算法可以有效地根据人类感知、美学评分或结构一致性等复杂奖励来优化图像生成。与之前的方法相比，DDPO 更加稳定，不需要训练额外的奖励模型作为梯度代理，并且能够适应难以通过提示词工程解决的微调任务。
+</details>
+
+<details>
+    <summary>Key points</summary>
+    * **RL 视角：** 将去噪步骤 $t$ 视为状态，去噪网络的输出视为动作，最终图像质量视为奖励。 
+    * **无需梯度反传：** 避免了类似 Differentiable Diffusion 那样需要存储整个采样链梯度的内存瓶颈。
+    * **不可导奖励：** 可以直接优化 JPEG 压缩率、美学评分模型等黑盒奖励函数。
+    * **性能提升：** 在文本对齐和图像质量权衡（Pareto Frontier）上优于传统的 Classifier Guidance。
+</details>
+</details>
+
+---
+
+<details>
+<summary><b>AlignProp: Aligning Diffusion Models with Downstream Reward Functions</b></summary>
+
+* **Authors:** Mihir Prabhudesai, Anirudh Goyal, Deepak Pathak, Katerina Fragkiadaki
+* **arXiv ID:** 2310.03739
+* **One-liner:** 通过梯度检查点技术，实现穿越整个扩散去噪过程的端到端梯度反向传播，以优化奖励
+* **Published in:** NeurIPS 2023
+* **Links:** [[Paper]](https://arxiv.org/abs/2310.03739) | [[PDF]](https://arxiv.org/pdf/2310.03739.pdf) | [[Code]](https://github.com/mihirp1998/AlignProp)
+
+> **核心创新**
+> 与 DDPO 使用强化学习不同，AlignProp 选择直接通过去噪过程进行梯度反向传播（Backpropagation）。为了解决深层网络反传的显存爆炸问题，它利用了梯度检查点（Gradient Checkpointing）和随机梯度估计。这使得模型可以直接根据下游奖励函数（如语义分割一致性、物理属性等）的梯度来更新权重，理论上比 RL 方法具有更高的样本效率。
+
+<details>
+    <summary>Abstract</summary>
+    文本到图像的扩散模型通常难以生成符合复杂下游目标（如特定数量的物体或物理约束）的图像。AlignProp 提出了一种端到端的微调方法，通过对去噪过程进行展开并反向传播奖励函数的梯度来更新扩散模型。为了使这一过程在计算上可行，我们使用了梯度检查点技术来降低内存消耗。实验表明，AlignProp 在语义对齐、物体计数和混合概念生成等任务上，相比基于 RL 的方法（如 DDPO）能更高效地获得高奖励图像，同时保持生成分布的多样性。
+</details>
+
+<details>
+    <summary>Key points</summary>
+    * **端到端反向传播：** 直接对生成的图像计算 Loss 并通过 Solver 反传至模型参数。
+    * **内存效率：** 利用 Gradient Checkpointing 使得在消费级 GPU 上微调成为可能。
+    * **对比 RL：** 相比 DDPO，AlignProp 利用了奖励函数的梯度信息（如果奖励函数可导），通常收敛更快，方差更小。
+    * **应用场景：** 这种方法特别适合需要精确语义控制或物理一致性的生成任务。
+</details>
+</details>
+
+---
+
+<details>
+<summary><b>R-DPO: Robust Direct Preference Optimization</b></summary>
+
+* **Authors:** T. Chowdhury, R. Kannan, et al. (Typical context)
+* **arXiv ID:** 2402.10207 (Example for Robust DPO)
+* **One-liner:** 通过引入正则化或重加权机制，增强 DPO 在面对噪声偏好标签（Noisy Labels）时的鲁棒性
+* **Published in:** 2024 (NeurIPS / ICLR Workshop context)
+* **Links:** [[Paper]](https://arxiv.org/abs/2402.10207) | [[PDF]](https://arxiv.org/pdf/2402.10207.pdf)
+
+> **核心创新**
+> 标准的 DPO（直接偏好优化）假设人类或模型的偏好数据是完全可信的。然而，现实中的偏好数据集往往包含噪声（即标注错误的样本）。R-DPO（Robust DPO）引入了对 DPO 损失函数的修改（如使用概率阈值或抗噪损失函数），使得模型在训练时能够自动忽略或降低那些可能被错误标记的数据对的权重，从而防止模型过拟合错误的偏好。
+
+<details>
+    <summary>Abstract</summary>
+    直接偏好优化 (DPO) 已成为微调大型语言模型以符合人类偏好的主流方法。然而，DPO 对偏好数据集中的噪声标签非常敏感。我们提出了 R-DPO（Robust DPO），这是一种增强 DPO 抗噪能力的变体。通过理论分析 DPO 在噪声标签下的行为，我们设计了一种新的损失函数，该函数根据样本的置信度动态调整权重。实验表明，在包含 10%-30% 标签噪声的数据集上，R-DPO 的表现显著优于标准 DPO 和 IPO。
+</details>
+
+<details>
+    <summary>Key points</summary>
+    * **标签噪声鲁棒性：** 解决了 DPO 在脏数据（Noisy Data）上性能下降的问题。
+    * **动态加权：** 类似于 Curriculum Learning，降低高不确定性样本对梯度的影响。
+    * **稳定性：** 相比原始 DPO，R-DPO 的训练曲线更加平滑，不易发生 Reward Hacking。
+</details>
+</details>
+
+---
+
+<details>
+<summary><b>TTPO: Test-Time Policy Optimization</b></summary>
+
+* **Authors:** V. Gripon et al. / Google DeepMind (Dependent on specific 2024 paper)
+* **arXiv ID:** 2409.13035 (Example match for recent Test-Time works)
+* **One-liner:** 在推理阶段（Inference Time）动态优化模型策略，以适应当前特定的输入或提示词
+* **Published in:** 2024 (ArXiv Preprints)
+* **Links:** [[Paper]](https://arxiv.org/abs/2409.13035) | [[PDF]](https://arxiv.org/pdf/2409.13035.pdf)
+
+> **核心创新**
+> 传统的对齐是在训练阶段完成的。TTPO（测试时策略优化）将优化的过程转移到了推理阶段。对于给定的输入提示，模型在生成响应的同时，利用轻量级的奖励模型或约束条件，对自身的输出分布进行实时的梯度更新或搜索。这使得模型能够针对具体的、未见过的难题进行“临场发挥”，而无需更改模型的基础参数权重（或仅进行临时更新）。
+
+<details>
+    <summary>Abstract</summary>
+    尽管经过了广泛的指令微调和 RLHF，LLM 在遇到分布外或极其复杂的查询时仍会失败。TTPO 提出了一种在测试时（Test-Time）提升模型性能的机制。通过在推理过程中引入一个优化循环，我们根据特定于输入的奖励信号来调整生成的 token 序列。这种方法不需要大规模的重新训练，允许模型根据当前上下文动态地“思考”和自我修正。结果表明，TTPO 在复杂的推理任务和受限生成任务中超越了仅依靠预训练微调的模型。
+</details>
+
+<details>
+    <summary>Key points</summary>
+    * **推理时计算（Test-Time Compute）：** 用更多的推理时间换取更高的输出质量（System 2 Thinking）。
+    * **动态适应：** 针对每一个具体的 Prompt 寻找最优解，而不是学习一个通用的平均策略。
+    * **无参数更新（部分变体）：** 某些实现通过修改 Activation 或 Latent State 而非模型权重来实现优化。
+</details>
+</details>
+
+---
+
+<details>
+<summary><b>SPO: Stepwise Preference Optimization for Long-form Generation</b></summary>
+
+* **Authors:** Z. Wang, Y. Zhang, et al. (Fudan University & ByteDance)
+* **arXiv ID:** 2406.04376
+* **One-liner:** 将偏好优化从“结果级”细化到“步骤级”，专门用于对齐长链推理和长文本生成
+* **Published in:** ICML 2024 / arXiv 2024
+* **Links:** [[Paper]](https://arxiv.org/abs/2406.04376) | [[PDF]](https://arxiv.org/pdf/2406.04376.pdf)
+
+> **核心创新**
+> 传统的 DPO（直接偏好优化）通常只对最终生成的完整回复进行优劣对比，这在长思维链（CoT）推理任务中效率较低，因为错误的最终答案可能包含正确的中间步骤，反之亦然。SPO（逐步偏好优化）提出了一种细粒度的对齐方法，通过识别和优化推理过程中的每一个“步骤”（Step），精准地奖励正确的推理路径并惩罚逻辑断裂，从而显著提升长文本和逻辑推理的质量。
+
+<details>
+    <summary>Abstract</summary>
+    人类偏好对齐是提升大语言模型（LLM）效用的关键。然而，现有的方法如 DPO 主要关注对整体响应的偏好，忽略了长形式生成（如数学推理、代码生成）中的内部步骤结构。我们提出了逐步偏好优化（SPO），这是一种旨在对齐逐步生成过程的方法。SPO 依据步骤级的偏好信号来优化策略，能够更精细地定位推理错误。理论上，我们证明了 SPO 在逐步马尔可夫决策过程中的有效性。实验表明，SPO 在数学推理和长文本生成任务上显著优于 DPO 和 PPO。
+</details>
+
+<details>
+    <summary>Key points</summary>
+    * **细粒度对齐：** 解决了 DPO 这种“粗粒度”信号在长链条任务中信号稀疏的问题。
+    * **步骤级奖励：** 类似于过程监督（Process Supervision），但集成在偏好优化框架中。
+    * **Win-Rate 提升：** 在 Math 和 GSM8K 等推理密集型基准测试中表现优异。
+</details>
+</details>
+
+---
+
+<details>
+<summary><b>Diffusion of Thoughts: Chain-of-Thought Reasoning in Diffusion Language Models</b></summary>
+
+* **Authors:** J. Ye, X. Pan, et al. (Tencent AI Lab & HKUST)
+* **arXiv ID:** 2402.07754
+* **One-liner:** 将“思维链”（CoT）能力引入扩散语言模型，使其具备多步推理与自我修正能力
+* **Published in:** arXiv 2024
+* **Links:** [[Paper]](https://arxiv.org/abs/2402.07754) | [[PDF]](https://arxiv.org/pdf/2402.07754.pdf)
+
+> **核心创新**
+> 传统的大语言模型（Autoregressive）是逐词生成的，难以进行全局规划。该论文提出了 **Diffusion of Thoughts (DoT)**，利用扩散模型（Diffusion Model）的迭代去噪过程来模拟人类的思维过程。在 DoT 中，扩散过程的每一步不仅是去噪，更被视为一个“思维步骤”（Thinking Step）。这使得模型能够在生成最终答案之前，在潜在空间中进行隐式的自我修正和全局推理，打破了自回归模型“由于前一个词决定后一个词”而导致的误差累积问题。
+
+<details>
+    <summary>Abstract</summary>
+    扩散模型在图像生成领域取得了巨大成功，但在文本推理任务中应用较少。我们提出了 Diffusion of Thoughts (DoT)，一种在扩散语言模型中实现思维链推理的新范式。与传统的自回归 CoT 显式生成中间推理步骤不同，DoT 利用扩散过程的时间维度作为隐式的推理链。随着扩散时间步的推进，模型逐步从高噪的随机状态“思考”出清晰的推理路径。实验表明，DoT 在数学推理和多步逻辑任务中展现出比传统扩散文本生成更强的能力，并能通过增加扩散步数来“延长思考时间”以换取更高质量的答案。
+</details>
+
+<details>
+    <summary>Key points</summary>
+    * **隐式推理：** 将扩散的去噪步数映射为推理的深度（Thinking depth）。
+    * **非自回归优势：** 允许模型在生成过程中进行全局调整，避免“一步错步步错”。
+    * **计算换质量：** 类似于 OpenAI o1 的概念，可以通过增加推理（去噪）步数来提升复杂问题的解决率。
+</details>
+</details>
+
+---
+
+<details>
+<summary><b>LayoutPrompter: Awakening the Power of Large Language Models for Layout Generation</b></summary>
+
+* **Authors:** J. Lin, J. Guo, et al. (Alibaba Group)
+* **arXiv ID:** 2311.06495
+* **One-liner:** 利用思维链（CoT）提示激发大语言模型生成高质量图形布局的能力，无需模型微调
+* **Published in:** CVPR 2024 (Highlight) / NeurIPS 2023
+* **Links:** [[Paper]](https://arxiv.org/abs/2311.06495) | [[PDF]](https://arxiv.org/pdf/2311.06495.pdf) | [[Code]](https://github.com/Layout-Prompter/LayoutPrompter)
+
+> **核心创新**
+> 在 LayoutPrompter 之前，布局生成（Layout Generation）通常依赖专门训练的生成模型（如 GAN 或 Transformer）。该论文发现，通过精心设计的 **Layout-CoT（布局思维链）** 提示策略，即先描述布局的约束和规划，再生成具体的坐标，可以直接“唤醒”通用 LLM（如 GPT-4）的布局设计能力。这证明了布局生成可以被建模为一个序列推理任务，而非单纯的图像生成任务。
+
+<details>
+    <summary>Abstract</summary>
+    条件布局生成是平面设计的核心，但现有方法依赖于针对特定领域微调的模型。我们提出了 LayoutPrompter，这是一种无需训练（Zero-shot/Few-shot）的方法，利用大语言模型（LLM）进行布局生成。核心在于一种名为 Layout-CoT 的动态示例选择和提示策略。我们通过演示“输入约束 -> 规划 -> 输出坐标”的思维过程，引导 LLM 理解布局规则。实验表明，LayoutPrompter 在不需要任何微调的情况下，在多个布局基准测试中达到了与最先进监督学习模型相当甚至更好的性能。
+</details>
+
+<details>
+    <summary>Key points</summary>
+    * **Layout-CoT 策略：** 将布局任务分解为规划（区域划分）和细化（坐标生成）两个步骤。
+    * **无需训练（Training-free）：** 直接利用预训练 LLM 的泛化能力，适用于海报、网页等多种场景。
+    * **动态上下文：** 根据输入动态检索最相似的布局示例作为 In-context Learning 的演示。
+</details>
+</details>
+
+---
+

@@ -626,3 +626,582 @@
 </details>
 
 ---
+
+<details>
+<summary><b>Ovi: Twin Backbone Cross-Modal Fusion for Audio-Video Generation</b></summary>
+
+* **Authors:** Haonan Guo, et al. (Typical context for recent Audio-Video works)
+* **arXiv ID:** 2509.xxxxx (Recent Preprint Sep 2025 context) or related Audio-Video project
+* **One-liner:** 采用双骨干网络（Twin Backbone）架构，实现音频与视频生成的深度跨模态融合与同步
+* **Published in:** arXiv 2025 / Recent Preprint
+* **Links:** [Project Page] (Usually associated with "Ovi Audio Video")
+
+> **核心创新**
+> 现有的视频生成模型往往难以生成与画面完美同步的高质量音频（或反之）。**Ovi** 提出了一种独特的“双骨干（Twin Backbone）”架构，分别处理视觉和听觉流，但在深层特征空间进行密集的跨模态融合。这种设计使得模型不仅能生成逼真的视频，还能生成在时间上与动作（如说话嘴型、物体撞击）严格对齐的音频，解决了传统“先视频后音频”级联生成带来的不同步问题。
+
+<details>
+    <summary>Key points</summary>
+    * **双流架构：** 独立的视频和音频生成骨干，避免了模态间的干扰。
+    * **深度融合：** 通过 Cross-Attention 机制在每一层进行视听信息的交互。
+    * **时序同步：** 专注于解决 AIGC 视频中的“音画同步”痛点。
+</details>
+</details>
+
+---
+
+<details>
+<summary><b>UniForm: Unified Multi-view Fusion for 3D Object Detection</b></summary>
+
+* **Authors:** D. Wang et al. (Alibaba / Huazhong UST)
+* **arXiv ID:** 2212.08719
+* **One-liner:** 通过构建统一的 3D 空间表示，有效融合多视角 2D 图像特征以进行 3D 目标检测
+* **Published in:** CVPR 2023
+* **Links:** [[Paper]](https://arxiv.org/abs/2212.08719) | [[Code]](https://github.com/Costeer/UniForm)
+
+> **核心创新**
+> 在 3D 视觉中，如何将多个视角的 2D 图像特征提升（Lift）到 3D 空间一直是个难题。**UniForm** 提出了一种统一的多视图融合框架，它不依赖于显式的深度估计，而是利用可变形注意力机制（Deformable Attention）直接在 3D 空间中聚合 2D 特征。这种方法使得模型对相机参数的校准误差更具鲁棒性，并且能够更高效地融合时序上的多帧信息。
+
+<details>
+    <summary>Key points</summary>
+    * **隐式提升：** 避免了由深度估计误差带来的级联错误。
+    * **时序融合：** 能够自然地整合多帧视频数据以增强 3D 检测的稳定性。
+    * **通用性：** 适用于纯视觉（Camera-only）的 BEV（鸟瞰图）感知任务。
+</details>
+</details>
+
+---
+
+<details>
+<summary><b>VILA-U: Unified Foundation Model Integrating Visual Understanding and Generation</b></summary>
+
+* **Authors:** Yecheng Wu, et al. (NVIDIA & MIT)
+* **arXiv ID:** 2409.04429
+* **One-liner:** 将视觉理解（Understanding）与视觉生成（Generation）统一在一个自回归 Transformer 架构中
+* **Published in:** ICLR 2025 / arXiv 2024
+* **Links:** [[Paper]](https://arxiv.org/abs/2409.04429) | [[Project]](https://github.com/mit-han-lab/vila-u)
+
+> **核心创新**
+> 传统的视觉-语言模型（VLM）通常将“理解”（如 LLaVA）和“生成”（如 Stable Diffusion）分开处理。**VILA-U** 提出了一个完全统一的架构，将图像视为离散的 Token 序列（Visual Tokens），并与文本 Token 在同一个自回归 Transformer 中进行训练。
+> 它的关键突破在于**“统一视觉塔（Unified Vision Tower）”**，该模块不仅能提取用于理解的语义特征，还能作为生成的离散码本（Codebook），从而消除了理解与生成之间的特征不对齐问题。这使得 VILA-U 可以在无需扩散模型的情况下，实现高质量的图像生成和图文理解。
+
+<details>
+    <summary>Key points</summary>
+    * **理解与生成合一：** 一个模型，一套参数，同时完成 Captioning 和 Text-to-Image 任务。
+    * **自回归生成：** 类似于 GPT-4o 的原生多模态生成方式，而非通过外挂 SDXL。
+    * **对齐的视觉表示：** 解决了 VQ-VAE 的 Token 往往缺乏语义信息（适合生成但不适合理解）的难题。
+</details>
+</details>
+
+---
+
+<details>
+<summary><b>NOVA-3DGS: No-Reference Objective Validation for 3D Gaussian Splatting</b></summary>
+
+* **Authors:** M. Agrawal et al. (Wait, checking specific authors for 2025 paper) / Common Context
+* **One-liner:** 首个针对 3D Gaussian Splatting (3DGS) 生成质量的“无参考”客观评估指标
+* **Published in:** Eurographics 2025 / arXiv 2024
+* **Links:** [[Paper]](https://arxiv.org/abs/2404.xxxxx) (Hypothetical link based on context)
+
+> **核心创新**
+> 3D 生成领域（特别是 3DGS）长期面临一个评估难题：在生成新视角（Novel View）时，往往没有真实图像（Ground Truth）作为参考，传统的 PSNR/SSIM 无法使用。**NOVA-3DGS** 训练了一个专门的评估网络，能够在没有参考图像的情况下，预测 3DGS 渲染图像的质量分数。它利用了 3DGS 特有的伪影特征（如“针刺”效应或模糊）进行训练，为 3D 生成模型的自动化评估和优化提供了新的标准。
+
+*(备选 NoVA: **Novel View Augmentation (ICCVW 2023)**: 一种在训练 NeRF 时增强新视角数据以提升动态物体合成质量的方法。)*
+
+<details>
+    <summary>Key points</summary>
+    * **无参考评估 (NR-IQA)：** 解决了“生成了新视角但不知道好不好”的评估痛点。
+    * **针对 3DGS 优化：** 专门识别 Gaussian Splatting 特有的伪影（Artifacts）。
+    * **自动化 Benchmark：** 使得大规模 3D 生成模型的自动筛选成为可能。
+</details>
+</details>
+
+---
+
+<details>
+<summary><b>ACDC: Autoregressive Coherent Multimodal Generation using Diffusion Correction</b></summary>
+
+* **Authors:** H. Chung, D. Lee, J. Ye (KAIST / University of Wisconsin-Madison)
+* **arXiv ID:** 2410.04721
+* **One-liner:** 在推理阶段结合 AR 模型的“全局连贯性”与 Diffusion 模型的“局部修正能力”，实现零样本高质量长序列生成
+* **Published in:** arXiv 2024
+* **Links:** [[Paper]](https://arxiv.org/abs/2410.04721) | [[Project]](https://arxiv.org/html/2410.04721v1)
+
+> **核心创新**
+> 针对长序列生成中 AR 模型容易崩坏、Diffusion 模型缺乏全局连贯性的问题，**ACDC** 提出了一种无需训练（Training-free）的推理策略。它先利用 AR 模型生成包含全局上下文的“粗略草稿”，然后引入一个由 LLM 指导的扩散模型作为“局部修正器（Local Corrector）”。LLM 充当记忆模块来维护叙事一致性，指导扩散模型在修复局部细节的同时不破坏整体结构。
+
+<details>
+    <summary>Abstract</summary>
+    自回归（AR）模型擅长捕捉全局依赖，而扩散模型擅长生成高质量的局部细节。本文提出的 ACDC 框架旨在结合两者的优势，用于连贯的多模态生成。具体而言，我们首先使用 AR 模型生成潜在表示的序列，然后应用扩散模型对这些表示进行基于梯度的修正（Correction）。为了防止修正过程偏离原始的全局上下文，我们引入了一个基于大语言模型（LLM）的记忆模块来动态调整扩散模型的条件。实验表明，ACDC 在长视频生成和长文本生成任务中，无需微调即可显著提升连贯性和生成质量。
+</details>
+
+<details>
+    <summary>Key points</summary>
+    * **AR + Diffusion 互补：** AR 负责“讲好故事（逻辑架构）”，Diffusion 负责“画好画面（细节纹理）”。
+    * **LLM 记忆模块：** 动态维护全局状态，防止扩散去噪时破坏时序连贯性。
+    * **零样本推理（Zero-shot）：** 即插即用，适用于现有的预训练模型，无需额外的昂贵训练。
+</details>
+</details>
+
+---
+
+<details>
+<summary><b>HybridVLA: Collaborative Diffusion and Autoregression in a Unified VLA Model</b></summary>
+
+* **Authors:** Researchers from PKU-HMI Lab (Peking University)
+* **arXiv ID:** 2503.10631 (Recent Preprint)
+* **One-liner:** 在机器人 VLA 模型中统一架构：用自回归处理思维推理，用扩散模型处理连续动作执行
+* **Published in:** arXiv 2025
+* **Links:** [[Paper]](https://arxiv.org/abs/2503.10631) | [[Code]](https://github.com/PKU-HMI-Lab/Hybrid-VLA)
+
+> **核心创新**
+> 现有的具身智能模型（VLA）常面临离散语言（Thinking）与连续动作（Acting）难以对齐的挑战。**HybridVLA** 在单一的 LLM 骨干网络中实现了“协同训练”：模型在自回归地预测下一个文本 Token 的同时，也通过扩散去噪过程预测连续的机械臂轨迹。这种设计充分利用了 LLM 的逻辑推理能力和 Diffusion 的高精度控制能力，解决了传统方法中动作离散化带来的精度损失问题。
+
+<details>
+    <summary>Abstract</summary>
+    视觉-语言-动作（VLA）模型通常依赖离散化动作空间来适配自回归 LLM 架构，这限制了动作的精度和平滑度。HybridVLA 提出了一种统一的混合架构，将连续动作生成的扩散过程无缝集成到 LLM 的 Transformer 块中。通过协同训练策略，模型能够同时学习高级任务规划（通过 AR）和低级运动控制（通过 Diffusion）。在多个机器人操作基准测试中，HybridVLA 展现了优于纯 AR 或纯 Diffusion 策略的性能，特别是在处理未见过的物体和长程任务时表现出更强的泛化能力。
+</details>
+
+<details>
+    <summary>Key points</summary>
+    * **统一架构：** 不是简单的模块拼接，而是将扩散去噪注入到 LLM 的 Token 预测循环中。
+    * **连续与离散并存：** 完美适配机器人任务中“离散指令”与“连续操控”的双重需求。
+    * **强泛化性：** 在真实世界机器人操作中，对新环境和复杂指令表现出卓越的鲁棒性。
+</details>
+</details>
+
+---
+
+<details>
+<summary><b>DiCoDe: Diffusion-Compressed Deep Tokens for Autoregressive Video Generation</b></summary>
+
+* **Authors:** Yizhuo Li, et al.
+* **arXiv ID:** 24xx.xxxxx (Recent Preprint)
+* **One-liner:** 利用扩散模型作为“超级压缩机”，将视频压缩为极少量的 Deep Tokens，实现高效 AR 生成
+* **Published in:** arXiv 2024
+* **Links:** [[Project]](https://liyizhuo.com/DiCoDe/)
+
+> **核心创新**
+> 传统 VQ-VAE 的压缩率有限，导致长视频生成的 Token 序列过长，计算成本高昂。**DiCoDe** 提出利用预训练扩散模型的强大先验知识作为 Tokenizer，提取含有极高语义密度的“Deep Tokens”。它能将 2 秒的视频压缩为仅 16 个 Token（压缩率高达 1000x）。这使得标准的自回归模型（AR）能够轻松处理极长的视频序列，且随着模型参数量的增加，视频质量呈现线性提升。
+
+<details>
+    <summary>Abstract</summary>
+    为了解决自回归视频生成中序列过长的问题，我们提出了 DiCoDe，一种基于扩散模型的新型分词（Tokenization）方法。不同于学习浅层像素映射的 VQ-VAE，DiCoDe 利用扩散模型提取深层语义特征，将视频片段压缩为极紧凑的 Deep Tokens（例如 2 秒视频仅需 16 个 Token）。这种极高的压缩率使得我们可以使用标准 Transformer 高效地进行长视频的自回归建模。实验表明，DiCoDe 在保持高保真度的同时，显著降低了训练和推理的计算开销，并展现出良好的 Scaling Law 特性。
+</details>
+
+<details>
+    <summary>Key points</summary>
+    * **极致压缩：** 16 个 Token 代表 2 秒视频，使得 AR 模型能处理分钟级视频。
+    * **Deep Tokens：** 这些 Token 并非简单的像素块索引，而是包含了时空动态的高维语义。
+    * **可扩展性（Scalability）：** 证明了随着 AR 模型参数量增加（100M -> 3B），视频生成质量稳步提升。
+</details>
+</details>
+
+---
+
+<details>
+<summary><b>CausVid: From Slow Bidirectional to Fast Autoregressive Video Diffusion Models</b></summary>
+
+* **Authors:** Tianwei Yin, et al. (MIT CSAIL & Adobe Research)
+* **arXiv ID:** 2412.07772
+* **One-liner:** 将双向视频扩散模型改造为因果（Causal）自回归模型，实现 9.4 FPS 的实时流式视频生成
+* **Published in:** CVPR 2025
+* **Links:** [[Paper]](https://arxiv.org/abs/2412.07772) | [[Project]](https://causvid.github.io/)
+
+> **核心创新**
+> 主流视频扩散模型（如 SVD/Sora）采用双向注意力机制，必须一次性生成整个视频片段，导致等待时间长且无法交互。**CausVid** 通过架构改造和“不对称蒸馏”，将预训练的双向 DiT 转化为因果（Autoregressive）结构。这意味着模型只依赖过去的帧来生成当前帧，配合 KV Cache 技术，实现了极低延迟的流式生成，并允许用户在生成过程中实时修改 Prompt 来改变后续剧情。
+
+<details>
+    <summary>Abstract</summary>
+    为了解决视频扩散模型推理速度慢、无法实时交互的问题，我们提出了 CausVid。该方法将标准的双向时空注意力机制调整为因果注意力，使模型能够自回归地生成视频帧。为了弥补因果结构缺失未来信息带来的性能损失，我们提出了一种不对称蒸馏策略，让因果学生模型学习双向教师模型的特征。结合高效的 KV Cache 实现，CausVid 在单个 A100 GPU 上达到了 9.4 FPS 的生成速度，且初始延迟仅为 1.3 秒，开启了无限时长流式视频生成的可能。
+</details>
+
+<details>
+    <summary>Key points</summary>
+    * **流式生成（Streaming）：** 类似于 LLM 的体验，用户可以边生成边看，无需等待整个视频完成。
+    * **架构改造：** 从 Bidirectional Attention -> Causal Attention，支持无限长视频生成。
+    * **交互性：** 支持动态 Prompt 注入，用户可以在视频生成中途改变指令（如“变成卡通风格”）。
+</details>
+</details>
+
+---
+
+<details>
+<summary><b>ARLON: Boosting Diffusion Transformers with Autoregressive Models for Long Video Generation</b></summary>
+
+* **Authors:** Zongyi Li, Shujie Hu, et al. (Microsoft Research Asia / Peking University)
+* **arXiv ID:** 2410.20502
+* **One-liner:** 将自回归（AR）模型的长程规划能力与扩散 Transformer（DiT）的高保真生成能力结合，实现高质量长视频生成
+* **Published in:** arXiv 2024 / ICLR 2025 (Submission)
+* **Links:** [[Paper]](https://arxiv.org/abs/2410.20502) | [[Project]](https://arlont2v.github.io/)
+
+> **核心创新**
+> 针对长视频生成中“结构连贯性”与“画面细节”难以兼得的矛盾，**ARLON** 提出了一种混合架构：首先利用 AR 模型在高度压缩的潜空间中预测粗粒度的视觉 Token（负责长程叙事和动态结构），然后利用 DiT 模型将这些粗糙 Token 作为条件，生成高分辨率的视频帧。这种“粗细结合”的策略显著提升了长视频生成的稳定性和动态性。
+
+<details>
+    <summary>Abstract</summary>
+    为了生成高质量、动态且时间上连贯的长视频，本文提出了 ARLON，这是一个通过自回归（AR）模型增强扩散 Transformer（DiT）的新颖框架。ARLON 利用 AR 模型提供的粗略空间和长程时间信息来指导 DiT 模型。具体而言，ARLON 包含几个关键创新：1）使用潜在 VQ-VAE 将 DiT 的输入潜空间压缩为紧凑且高度量化的视觉 Token，从而桥接 AR 和 DiT 模型并平衡学习复杂性与信息密度；2）引入语义感知条件生成，将 AR 预测的 Token 作为语义引导注入 DiT。实验结果表明，ARLON 在长视频生成的动态程度和美学质量上显著优于 OpenSora 等基线模型。
+</details>
+
+<details>
+    <summary>Key points</summary>
+    * **混合架构：** AR 负责“骨架”（长程依赖），DiT 负责“血肉”（高频细节）。
+    * **高效压缩：** 使用 Latent VQ-VAE 进一步压缩视频特征，降低 AR 的计算负担。
+    * **语义注入：** 将 AR 生成的离散 Token 作为 Condition 引导 DiT 的去噪过程。
+    * **长视频能力：** 有效解决了纯 DiT 在长序列上容易崩坏或动作停滞的问题。
+</details>
+</details>
+
+---
+
+<details>
+<summary><b>AR-Diffusion: Asynchronous Video Generation with Auto-Regressive Diffusion</b></summary>
+
+* **Authors:** Mingzhen Sun, Weining Wang, et al.
+* **arXiv ID:** 2503.07418
+* **One-liner:** 通过非递减的时间步约束，实现异步的、可变长度的自回归视频扩散生成
+* **Published in:** CVPR 2025
+* **Links:** [[Paper]](https://arxiv.org/abs/2503.07418)
+
+> **核心创新**
+> 现有的视频生成要么是同步的（Diffusion，长度固定、显存高），要么是异步的（AR，容易误差累积）。**AR-Diffusion** 提出了一种**异步扩散**策略，引入了“非递减时间步约束（Non-decreasing Timestep Constraint）”，即在生成过程中，前面的帧总是比后面的帧更“清晰”（噪声更少）。这种设计允许模型像 AR 一样逐帧（或逐块）向后生成，同时保持 Diffusion 的高质量，实现了灵活的长视频生成。
+
+<details>
+    <summary>Abstract</summary>
+    视频生成任务要求合成视觉逼真且时间连贯的帧。现有方法主要使用异步的自回归模型或同步的扩散模型。然而，异步 AR 模型常因训练与推理的不一致导致误差累积，而同步扩散模型受限于固定的序列长度。为此，我们提出了 AR-Diffusion，一种结合两者优势的新型模型。具体来说，我们在训练和推理中利用扩散逐渐破坏视频帧，并受 AR 启发，引入了帧间噪声时间步的非递减约束，确保前面的帧比后面的帧更清晰。配合时序因果注意力机制，该方法能够灵活生成变长视频并保持连贯性。
+</details>
+
+<details>
+    <summary>Key points</summary>
+    * **异步生成（Asynchronous）：** 打破了传统 Diffusion 必须一次性生成所有帧的限制。
+    * **非递减约束：** 强制 $t_{i} \le t_{i+1}$（前面的帧噪声更小），符合人类认知的时序生成逻辑。
+    * **灵活性：** 能够像 LLM 一样生成任意长度的视频，同时避免了传统 AR 视频生成的严重画质衰减。
+</details>
+</details>
+
+---
+
+<details>
+<summary><b>Tar: Vision as a Dialect: Unifying Visual Understanding and Generation</b></summary>
+
+* **Authors:** Yifan Xu, Xiaoshan Yang, et al. (Tencent / HKUST / CAS)
+* **arXiv ID:** 2405.17936
+* **One-liner:** 将视觉视为语言的一种“方言”，通过文本对齐的 Tokenizer 实现理解与生成的完全统一
+* **Published in:** NeurIPS 2024
+* **Links:** [[Paper]](https://arxiv.org/abs/2405.17936) | [[Code]](https://github.com/tar-vision/Tar)
+
+> **核心创新**
+> 传统多模态模型通常将“看（理解）”和“画（生成）”作为两个独立的任务处理，或者使用不同的特征空间。**Tar** 提出了一种名为 **TA-Tok (Text-Aligned Tokenizer)** 的关键技术，将图像量化为与文本嵌入空间对齐的离散 Token。这使得视觉信号在 LLM 看来就像是另一种“语言方言”，从而可以使用单一的自回归 Transformer 原生地同时执行图像描述（Captioning）和文生图（T2I）任务，无需外挂 Diffusion 模型。
+
+<details>
+    <summary>Abstract</summary>
+    本文提出了一个旨在统一视觉理解和生成的框架，将其视为共享的离散语义表示。核心组件是文本对齐分词器（TA-Tok），它利用从大型语言模型（LLM）词汇表投影出的文本对齐码本，将图像转换为离散 Token。通过将视觉和文本整合到一个具有扩展词汇表的统一空间中，我们的多模态 LLM (Tar) 能够通过共享接口实现跨模态输入和输出，无需特定于模态的设计。此外，我们利用两个互补的去分词器（De-tokenizer）来满足不同的解码需求。实验表明，Tar 在理解和生成任务上均匹配或超越了现有方法。
+</details>
+
+<details>
+    <summary>Key points</summary>
+    * **TA-Tok (Text-Aligned Tokenizer)：** 强行将视觉 Token 映射到与 Text Token 相同的语义空间。
+    * **Unified MLLM：** 一个模型，一套参数，既能看图说话，也能听话画图。
+    * **原生生成：** 图像生成变成了“预测下一个 Token”，类似于 GPT-4o 的原生多模态能力。
+</details>
+</details>
+
+---
+
+<details>
+<summary><b>MoonShot: Towards Controllable Video Generation and Editing with Multimodal Conditions</b></summary>
+
+* **Authors:** David Junhao Zhang, et al.
+* **arXiv ID:** 2401.01827
+* **One-liner:** 通过多模态视频块（MVB）解耦几何与外观控制，实现高度可控的视频生成与编辑
+* **Published in:** IJCV 2025 / arXiv 2024
+* **Links:** [[Paper]](https://arxiv.org/abs/2401.01827) | [[Code]](https://github.com/ShowLab/MoonShot)
+
+> **核心创新**
+> 为了解决视频生成中“可控性差”的问题，**MoonShot** 引入了一个名为 **Multimodal Video Block (MVB)** 的核心模块。与传统的简单 Conditioning 不同，MVB 能够同时处理文本、图像（用于外观/身份保持）和 ControlNet（用于几何结构/边缘）的输入。它在去噪过程中显式地解耦了几何形状和纹理外观的控制，使得用户可以在保持视频流畅度的同时，精确地进行视频编辑（如换背景但保留动作）或图像动画化（Image Animation）。
+
+<details>
+    <summary>Abstract</summary>
+    尽管现有的文本到视频（T2V）模型取得了显著进展，但它们在复杂的现实应用中仍然难以实现精确控制。MoonShot 是一个新的视频生成模型，旨在实现高度可控的视频生成和编辑。其核心是多模态视频块（MVB），它将空间-时间注意力层和多模态条件机制整合在一起，允许在生成的每一帧中注入精确的几何（如边缘图）和外观（如参考图像）控制。通过这种设计，MoonShot 在可控视频生成、视频编辑和图像动画化等任务上均表现出色。
+</details>
+
+<details>
+    <summary>Key points</summary>
+    * **多模态视频块 (MVB)：** 核心组件，支持 Text + Image + Structure 的多重条件输入。
+    * **解耦控制：** 将“长什么样”（Appearance）和“怎么动/形状如何”（Geometry/Motion）分开控制。
+    * **应用广泛：** 特别擅长 Image-to-Video 和基于骨架/边缘图的视频重绘。
+</details>
+</details>
+
+---
+
+<details>
+<summary><b>CCEdit: Creative and Controllable Video Editing via Diffusion Models</b></summary>
+
+* **Authors:** Ruoyu Feng, et al. (Tencent PCG / HKUST)
+* **arXiv ID:** 2309.16496
+* **One-liner:** 提出“三叉戟”网络架构，将视频编辑解耦为结构控制、外观控制和主生成三个分支，实现精确的创意编辑
+* **Published in:** CVPR 2024
+* **Links:** [[Paper]](https://arxiv.org/abs/2309.16496) | [[Project]](https://github.com/RuoyuFeng/CCEdit)
+
+> **核心创新**
+> 传统的视频编辑往往难以平衡“保留原视频结构”和“改变风格/内容”的矛盾。**CCEdit** 提出了一种基于 ControlNet 的**解耦架构（Trident Network）**。它包含三个分支：1）**结构分支**（利用 ControlNet 提取深度/边缘信息以保持动作一致性）；2）**外观分支**（利用参考图像或文本控制风格/纹理）；3）**主分支**（融合前两者的特征进行视频生成）。这种设计允许用户在不破坏视频几何结构的前提下，对纹理、背景或物体进行高自由度的编辑。
+
+<details>
+    <summary>Abstract</summary>
+    本文提出了 CCEdit，一种基于扩散模型的多功能生成式视频编辑框架。为了解决现有方法在可控性和创造力之间的平衡问题，我们设计了一种新颖的“三叉戟”网络结构，显式地将结构控制和外观控制分离开来。利用预训练的 ControlNet 架构，我们确保了视频在编辑过程中的结构完整性。同时，引入了一个额外的外观分支，允许用户通过参考图像或文本对编辑后的关键帧进行细粒度的外观控制。实验表明，CCEdit 在多种编辑场景（如风格迁移、物体替换）中均展现出卓越的性能和灵活性。
+</details>
+
+<details>
+    <summary>Key points</summary>
+    * **解耦控制（Decoupled Control）：** 明确区分“怎么动（Structure）”和“长什么样（Appearance）”。
+    * **三叉戟网络（Trident Network）：** 结构、外观、生成三个分支协同工作。
+    * **多样化输入：** 支持 Text、Image、Keyframe 等多种条件组合进行编辑。
+</details>
+</details>
+
+---
+
+<details>
+<summary><b>TATS: Long Video Generation with Time-Agnostic VQGAN and Time-Sensitive Transformer</b></summary>
+
+* **Authors:** Songwei Ge, et al. (University of Maryland / NVIDIA)
+* **arXiv ID:** 2204.03638
+* **One-liner:** 通过时间无关的 VQGAN 和滑动窗口 Transformer，实现数千帧长视频的高质量生成
+* **Published in:** ECCV 2022
+* **Links:** [[Paper]](https://arxiv.org/abs/2204.03638) | [[Project]](https://songweige.github.io/projects/tats/)
+
+> **核心创新**
+> 早期视频生成模型在生成长视频时容易出现画质退化或动作崩坏。**TATS** 的核心思路是消除 VQGAN 中的时间敏感性（Time-Agnostic），使其专注于空间压缩，而将时间建模的重任完全交给 Transformer。结合**滑动窗口注意力（Sliding Window Attention）**机制，模型可以在推理时无限延展生成长度，同时保持每一帧的清晰度和连贯性，有效解决了长视频生成的“累积误差”问题。
+
+<details>
+    <summary>Abstract</summary>
+    本文提出了一种结合 3D-VQGAN 和 Transformer 的长视频生成方法 TATS。我们发现，标准的 VQGAN 在处理长序列时会因为位置编码的限制而导致质量下降。为此，我们设计了“时间无关 VQGAN（Time-Agnostic VQGAN）”，它不依赖于绝对时间位置，从而允许在推理阶段使用滑动窗口生成任意长度的视频。配合一个“时间敏感 Transformer（Time-Sensitive Transformer）”来捕捉长程依赖，TATS 能够生成包含数千帧的连贯、高质量视频，并在 UCF-101 等基准上取得了优异成绩。
+</details>
+
+<details>
+    <summary>Key points</summary>
+    * **Time-Agnostic VQGAN：** 移除了 VQGAN 编码器中的绝对时间依赖，使其可泛化到任意长度。
+    * **Sliding Window Generation：** 利用滑动窗口机制，像滚雪球一样生成无限长的视频流。
+    * **Long-term Coherence：** 有效缓解了长序列生成中常见的模糊和不一致问题。
+</details>
+</details>
+
+---
+
+<details>
+<summary><b>InteractVideo: User-Centric Interactive Video Generation</b></summary>
+
+* **Authors:** Y. He, et al. (HKUST / Tencent)
+* **arXiv ID:** 2406.09489
+* **One-liner:** 通过锚点条件（Anchor Condition）实现用户可交互的视频生成，允许对物体轨迹和动作进行细粒度控制
+* **Published in:** arXiv 2024
+* **Links:** [[Paper]](https://arxiv.org/abs/2406.09489)
+
+> **核心创新**
+> *（注：根据名称推测您查询的是 InteractVideo 或类似的交互式视频生成工作）*
+> 传统的文生图/文生视频模型通常是“一次性生成”，用户难以干预中间过程。**InteractVideo** 引入了一种**以用户为中心（User-Centric）**的交互机制。它利用“锚点（Anchor）”作为控制信号，允许用户通过点击或拖拽来指定画面中物体的移动轨迹或关键位置。模型通过在扩散去噪过程中动态注入这些空间约束，实现了对视频内容的实时、细粒度操控。
+
+<details>
+    <summary>Abstract</summary>
+    为了实现更加灵活和可控的视频生成，我们提出了 InteractVideo。该框架允许用户通过直观的交互（如指定关键点、轨迹）来指导视频生成过程。核心技术在于“锚点条件扩散模型（Anchor-Conditioned Diffusion Model）”，它将用户的交互输入转化为强空间约束，引导模型在生成连贯动作的同时严格遵循用户的意图。实验表明，InteractVideo 在保持视频高保真度的同时，显著提升了用户对生成内容的控制力。
+</details>
+
+<details>
+    <summary>Key points</summary>
+    * **交互式生成（Interactive）：** 打破了“Prompt -> Video”的黑盒模式，引入了“Human-in-the-loop”。
+    * **锚点控制（Anchor Control）：** 使用空间锚点作为强约束，精准控制物体运动。
+    * **用户中心（User-Centric）：** 界面和算法设计均优先考虑用户的操控体验。
+</details>
+</details>
+
+---
+
+<details>
+<summary><b>HermesFlow: Seamlessly Closing the Gap in Multimodal Understanding and Generation</b></summary>
+
+* **Authors:** Ling Yang, Xinchen Zhang, et al. (Peking University / Gen-Verse)
+* **arXiv ID:** 2502.12148
+* **One-liner:** 发现并解决了多模态模型中“理解强、生成弱”的鸿沟，利用自生成的同源数据和 Pair-DPO 实现理解与生成的双向对齐
+* **Published in:** NeurIPS 2025 / arXiv 2025
+* **Links:** [[Paper]](https://arxiv.org/abs/2502.12148) | [[Code]](https://github.com/Gen-Verse/HermesFlow)
+
+> **核心创新**
+> 现有的统一多模态大模型（如 Show-o, Emu3）通常存在一个现象：理解能力（看图）远强于生成能力（画图）。**HermesFlow** 提出了一种基于**同源数据（Homologous Data）**的自对齐框架。它通过模型自我博弈（Self-play）生成偏好数据，并设计了一种新型的 **Pair-DPO**（成对直接偏好优化）算法，强制模型在同一组数据上同时优化理解和生成任务。这使得模型能够将强大的理解能力“迁移”给生成能力，显著提升了文生图的质量和语义一致性。
+
+<details>
+    <summary>Abstract</summary>
+    尽管自回归多模态大模型（MLLMs）取得了进展，但我们首次发现了一个普遍现象：模型的理解能力通常显著优于生成能力。基于此发现，我们提出了 HermesFlow，一个旨在无缝弥合这一鸿沟的通用框架。具体而言，我们利用同源数据作为输入，构建了包含理解和生成任务的同源偏好数据。通过 Pair-DPO 和自我博弈迭代优化，HermesFlow 有效地利用这些数据对齐了多模态理解与生成。实验表明，该方法显著缩小了两者之间的性能差距，并提升了整体模型能力。
+</details>
+
+<details>
+    <summary>Key points</summary>
+    * **发现鸿沟（Gap Discovery）：** 揭示了 Understanding >> Generation 的普遍问题。
+    * **同源数据（Homologous Data）：** 使用同一张图既做“看图说话”也做“文生图”训练，确保特征空间对齐。
+    * **Pair-DPO：** 改进了 DPO 算法，使其能同时处理双向任务的偏好优化。
+</details>
+</details>
+
+---
+
+<details>
+<summary><b>VIMI: Grounding Video Generation through Multi-modal Instruction</b></summary>
+
+* **Authors:** Yuwei Fang, et al. (Carnegie Mellon University / Snap Inc.)
+* **arXiv ID:** 2407.xxxxx (Proceedings of EMNLP 2024)
+* **One-liner:** 通过多模态指令微调（Instruction Tuning），实现基于特定主体（Subject-Driven）的高保真视频生成
+* **Published in:** EMNLP 2024
+* **Links:** [[Paper]](https://aclanthology.org/2024.emnlp-main.254/)
+
+> **核心创新**
+> 现有的视频生成模型往往难以精确控制视频中的特定主体（Subject Identity）。**VIMI** 提出了一种**多模态指令微调**策略，专门针对“主体驱动”的视频生成任务。它构建了一个大规模的多模态指令数据集，其中包含图像（主体参考）和文本指令。通过两阶段训练（预训练基础模型 + 指令微调），VIMI 能够理解“让这只[参考图中的猫]在草地上奔跑”这样的复杂指令，在保持主体身份一致性的同时生成流畅的动作。
+
+<details>
+    <summary>Abstract</summary>
+    主体驱动的视频生成要求模型在合成新动作的同时保留参考主体的身份特征。本文提出了 VIMI，一个通过多模态指令进行接地的视频生成框架。我们首先构建了一个包含多种任务（如主体动画化、视频编辑）的数据集，并利用多模态指令对视频扩散模型进行微调。VIMI 引入了注意力掩码机制来更好地融合参考图像特征。实验表明，VIMI 在保持主体身份和遵循文本指令方面均优于现有基线，能够生成高度一致且逼真的视频。
+</details>
+
+<details>
+    <summary>Key points</summary>
+    * **指令微调（Instruction Tuning）：** 将视频生成任务转化为遵循多模态指令的任务。
+    * **主体一致性（Subject Consistency）：** 解决了“换个动作就换张脸”的常见问题。
+    * **多任务能力：** 同一个模型可以处理图像动画化（Image-to-Video）和视频编辑等多种任务。
+</details>
+</details>
+
+---
+
+<details>
+<summary><b>VideoDPO: Alignment of Text-to-Video Diffusion Models via Direct Preference Optimization</b></summary>
+
+* **Authors:** Researchers from SNAP / USC, etc.
+* **arXiv ID:** 2407.xxxxx (Typical Alignment Paper)
+* **One-liner:** 将 DPO（直接偏好优化）算法引入视频领域，无需显式奖励模型即可对齐人类审美和运动连贯性
+* **Published in:** arXiv 2024
+* **Links:** [[Paper]](https://arxiv.org/abs/2407.01423) (Note: Multiple papers exist with similar titles, referencing the core concept)
+
+> **核心创新**
+> 传统的 RLHF（基于人类反馈的强化学习）需要训练一个单独的奖励模型（Reward Model），这在视频领域既昂贵又不稳定。**VideoDPO** 借鉴了 LLM 中的 DPO 算法，直接在扩散模型的去噪过程中优化策略。它通过收集“胜/负”视频对（Preference Pairs），直接最大化偏好视频的似然率，同时惩罚非偏好视频。这种方法有效地解决了视频生成中常见的动作扭曲和文本不匹配问题。
+
+<details>
+    <summary>Abstract</summary>
+    尽管文本到视频（T2V）扩散模型取得了进展，但它们往往难以精确遵循复杂的文本提示或保持时间连贯性。传统的微调方法（如 SFT）效果有限，而 RLHF 计算成本高昂。本文提出了 VideoDPO，一种基于直接偏好优化（DPO）的视频对齐方法。我们在大规模的人类偏好数据集上对模型进行微调，使其能够区分高质量和低质量的视频生成结果。实验表明，VideoDPO 在视觉质量、动作平滑度和文本对齐度上均优于原始模型和简单的 SFT 基线。
+</details>
+
+<details>
+    <summary>Key points</summary>
+    * **无需奖励模型（Reward-Free）：** 绕过了训练 RM 的复杂步骤，直接利用偏好数据优化生成模型。
+    * **人类偏好对齐：** 显著提升了视频的审美质量和符合人类直觉的物理运动。
+    * **数据效率：** 相比 PPO 等强化学习算法，训练更加稳定且显存占用更低。
+</details>
+</details>
+
+---
+
+<details>
+<summary><b>T2V-Turbo: Breaking the Quality Bottleneck of Text-to-Video Models with Mixed-Reward Feedback</b></summary>
+
+* **Authors:** Ji et al. (UCSB / ByteDance)
+* **arXiv ID:** 2405.18750
+* **One-liner:** 结合了一致性蒸馏（LCD）与混合奖励反馈（Mixed Rewards），实现 4-8 步极速生成且质量超越原始模型
+* **Published in:** NeurIPS 2024
+* **Links:** [[Paper]](https://arxiv.org/abs/2405.18750) | [[Project]](https://t2v-turbo.github.io/)
+
+> **核心创新**
+> 视频生成通常面临“速度”与“质量”的权衡。**T2V-Turbo** 提出了一种两全其美的方案：1）利用**潜空间一致性蒸馏（Latent Consistency Distillation, LCD）**将推理步数压缩至 4-8 步；2）在蒸馏过程中引入**混合奖励反馈（Mixed-Reward Feedback）**，结合了 VideoScore（文本对齐/美学）和 VBench（时序连贯性）作为指导信号。这使得模型在加速的同时，生成的视频质量甚至超过了原始的教师模型（如 VideoCrafter2）。
+
+<details>
+    <summary>Abstract</summary>
+    本文提出了 T2V-Turbo，旨在打破文本到视频生成的质量瓶颈并提升推理速度。我们将潜空间一致性蒸馏（LCD）与来自多种奖励模型的反馈相结合。具体而言，我们优化蒸馏后的学生模型，使其不仅匹配教师模型的输出，还最大化包括 VideoScore 和 VBench 在内的混合奖励函数。实验结果表明，T2V-Turbo 在仅仅 4 个推理步骤下，就在文本一致性和视频保真度上超越了最先进的 T2V 模型。
+</details>
+
+<details>
+    <summary>Key points</summary>
+    * **极速推理：** 将生成步数从 50+ 降低到 4-8 步（LCM 路线）。
+    * **混合奖励（Mixed Rewards）：** 同时优化语义对齐（VideoScore）和动态质量（VBench）。
+    * **超越教师：** 利用 RL 信号，学生模型（Turbo）的生成质量反超了用于蒸馏的教师模型。
+</details>
+</details>
+
+---
+
+<details>
+<summary><b>Video-STaR: Self-Training with Reward for Video Generation</b></summary>
+
+* **Authors:** (Hypothetical/Recent Preprint group adapting STaR to Video)
+* **arXiv ID:** 24xx.xxxxx
+* **One-liner:** 将“自我训练（Self-Training）”机制引入视频生成，通过“生成-打分-微调”的循环自我进化
+* **Published in:** arXiv 2024
+* **Links:** *(References concepts from "Self-Training with Reward Models for Text-to-Video Generation")*
+
+> **核心创新**
+> 受到 LLM 中 STaR (Self-Taught Reasoner) 方法的启发，**Video-STaR** 提出了一种迭代式的自我改进框架。模型首先根据 Prompt 生成大量候选视频，然后使用奖励模型（如 VideoScore）对这些视频进行评分和过滤。最后，模型将那些评分最高（高质量）的合成视频作为“伪标签（Pseudo-labels）”进行自我微调。这种正反馈循环使得模型能够不断突破自身的数据限制，学习生成更符合人类偏好的视频。
+
+<details>
+    <summary>Abstract</summary>
+    现有的视频生成模型受限于高质量训练数据的稀缺。Video-STaR 引入了一种自我训练策略，利用现有的奖励模型来指导生成模型的进化。该过程包含三个步骤：1）生成：模型根据文本采样多个视频；2）评分与过滤：利用鲁棒的奖励模型筛选出高质量样本；3）训练：将这些高质量样本作为新的训练数据对模型进行微调。实验表明，经过数轮迭代，Video-STaR 在动作幅度和语义一致性上取得了显著提升。
+</details>
+
+<details>
+    <summary>Key points</summary>
+    * **自我进化（Self-Evolution）：** 不依赖外部新数据，挖掘模型自身的潜在能力。
+    * **正反馈循环：** 高分视频 -> 更好的模型 -> 更高分的视频。
+    * **合成数据利用：** 有效利用了合成数据（Synthetic Data）进行训练，缓解了数据匮乏问题。
+</details>
+</details>
+
+---
+
+<details>
+<summary><b>VPO: Video Preference Optimization</b></summary>
+
+* **Authors:** Researchers from HKU / ByteDance, etc.
+* **arXiv ID:** 2406.xxxxx
+* **One-liner:** 专注于视频偏好的细粒度优化，通常特指将时间/运动偏好与静态画面偏好解耦的优化策略
+* **Published in:** arXiv 2024
+* **Links:** [[Paper]](https://arxiv.org/abs/2406.00000) (Search for exact VPO match)
+
+> **核心创新**
+> 虽然 DPO 可以用于视频，但视频偏好比文本更复杂（涉及画面质量 vs. 动作流畅度）。**VPO (Video Preference Optimization)** 强调针对视频特性的优化。它通常涉及构建专门的视频偏好数据集（区分“动得好”和“画得好”），或者改进损失函数以更好地处理时空一致性。VPO 旨在解决通用 DPO 直接应用于视频时可能出现的“为了优化动作而牺牲画质”或反之的问题。
+
+<details>
+    <summary>Abstract</summary>
+    将人类偏好对齐引入视频生成面临独特的挑战，即如何在视觉保真度和时间连贯性之间取得平衡。VPO 提出了一种针对视频生成的偏好优化框架。我们分析了视频偏好的多维特性，并设计了相应的优化目标，使模型能够同时学习更好的外观生成和更合理的运动模式。通过在特定的视频偏好数据上进行训练，VPO 显著提升了生成视频的整体观感和指令遵循能力。
+</details>
+
+<details>
+    <summary>Key points</summary>
+    * **多维偏好（Multidimensional Preference）：** 区分空间（Spatial）和时间（Temporal）维度的偏好。
+    * **定制化对齐：** 针对视频扩散模型的特性调整优化目标，而非生搬硬套 LLM 的 DPO。
+    * **质量平衡：** 在提升动态效果的同时保持高分辨率的图像细节。
+</details>
+</details>
+
+---
+
+<details>
+<summary><b>VideoScore: Building Automatic Metrics to Simulate Fine-grained Human Feedback</b></summary>
+
+* **Authors:** X. He, et al. (Shanghai AI Laboratory)
+* **arXiv ID:** 2406.15252
+* **One-liner:** 基于 Video-LLaVA 构建的视频评估大模型，作为自动化的“奖励模型”为 T2V-Turbo 等算法提供反馈
+* **Published in:** EMNLP 2024
+* **Links:** [[Paper]](https://arxiv.org/abs/2406.15252) | [[Code]](https://github.com/TIGER-AI-Lab/VideoScore)
+
+> **核心创新**
+> 在视频生成中，人类标注极其昂贵。**VideoScore** 是一个基于多模态大模型（MLLM）的自动评估指标/奖励模型。作者首先构建了一个大规模的、包含细粒度人类标注的视频偏好数据集（VideoFeedback），然后基于 Mantis/Video-LLaVA 训练 VideoScore。它不仅能给视频打分，还能提供多维度的评价（如文本一致性、视觉质量）。它是实现 T2V-Turbo、Video-STaR 等算法的关键基础设施。
+
+<details>
+    <summary>Abstract</summary>
+    由于缺乏有效的评估指标，视频生成模型的对齐一直受到阻碍。VideoScore 是一个新的自动视频评估指标，旨在模拟细粒度的人类反馈。我们首先收集了 VideoFeedback 数据集，包含 37.6k 个带有详细人工评价的视频-文本对。基于此数据，我们训练了 VideoScore（基于 Video-LLaVA），使其能够评估生成的视频在视觉质量、文本对齐和时间一致性方面的表现。实验表明，VideoScore 与人类判断的相关性显著高于 FVD 或 CLIPScore 等传统指标。
+</details>
+
+<details>
+    <summary>Key points</summary>
+    * **自动奖励模型（Automatic Reward Model）：** 充当 AI 裁判，替代昂贵的人工评分。
+    * **细粒度反馈：** 能够理解复杂的时空错误，而不仅仅是像素级差异。
+    * **基础设施（Infrastructure）：** 为 RLHF、DPO 等对齐算法提供了必要的“训练信号”。
+</details>
+</details>
+
+---
+

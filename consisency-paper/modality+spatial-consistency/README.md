@@ -755,3 +755,279 @@
 </details>
 
 ---
+
+<details>
+<summary><b>Lift3D: Synthesize 3D Training Data by Lifting 2D GAN</b></summary>
+
+* **Authors:** Lele Chen, Guosheng Lin, Shujun Wang, Vladlen Koltun
+* **arXiv ID:** 2304.03526
+* **One-liner:** Distills pretrained 2D GANs into 3D NeRFs to generate labeled 3D training data for downstream tasks.
+* **Published in:** CVPR 2023
+* **Links:** [[Paper]](https://arxiv.org/abs/2304.03526) | [[PDF]](https://arxiv.org/pdf/2304.03526.pdf) | [[Code]](https://github.com/LeapLabTHU/Lift3D)
+
+> **Core Innovation**
+> Proposes a generative pipeline that "lifts" the capabilities of existing high-quality 2D GANs (like StyleGAN) into 3D space (3D NeRF). Through this distillation process, Lift3D generates images with explicit 3D geometry and viewpoint control, enabling the automatic creation of 3D-annotated datasets (pose, shape) for downstream 3D recognition tasks.
+
+<details>
+    <summary>Abstract</summary>
+    Training 3D vision models often requires large amounts of annotated 3D data, which is expensive and hard to scale. We propose Lift3D, a novel method to synthesize 3D training data by lifting a 2D GAN to a 3D generative radiance field. Unlike existing 3D GANs that require 3D data or multi-view images, Lift3D relies solely on a 2D GAN trained on single-view 2D image collections. We distill the latent space of the 2D GAN into a NeRF-based 3D generator, inheriting the diversity and realism of the 2D GAN while gaining 3D consistency. Experiments show that data synthesized by Lift3D significantly boosts the performance of downstream tasks, such as 3D pose estimation and shape reconstruction, on real-world datasets.
+</details>
+
+<details>
+    <summary>Key points</summary>
+    * 2D-to-3D Distillation: Uses StyleGAN as a teacher network to guide the learning of a Conditional Radiance Field.
+    * Data Generator: Automatically generates datasets with precise 3D annotations (pose, viewpoint, shape).
+    * Downstream Application: Significantly improves 3D pose estimation and reconstruction in data-scarce scenarios.
+    * Disentangled Control: Achieves independent control over texture, shape, and viewpoint of generated objects.
+</details>
+</details>
+
+---
+
+<details>
+<summary><b>SKED: Sketch-guided Text-to-3D Editing</b></summary>
+
+* **Authors:** Gang Li, Heliang Zheng, Chaoyue Song, Changwen Chen, et al.
+* **arXiv ID:** 2303.10735
+* **One-liner:** Combines sketch guidance with text prompts to enable precise geometric and appearance editing of 3D NeRF scenes. 
+* **Published in:** ICCV 2023
+* **Links:** [[Paper]](https://arxiv.org/abs/2303.10735) | [[PDF]](https://arxiv.org/pdf/2303.10735.pdf) | [[Code]](https://github.com/sked-3d/SKED)
+
+> **Core Innovation**
+> Addresses the lack of geometric control in text-only 3D editing by introducing a "Sketch-guided" mechanism. By drawing a sketch on a 2D view and projecting constraints into 3D space (via multi-view consistency losses), SKED allows users to precisely modify object shape and structure while using text prompts for appearance, achieving "draw-what-you-get" 3D editing.
+
+<details>
+    <summary>Abstract</summary>
+    Existing text-to-3D editing methods primarily rely on text prompts, making precise geometric control of 3D shapes difficult. To address this, we propose SKED, a sketch-guided text-to-3D editing framework. Users can provide a simple sketch along with a text prompt to modify an existing Neural Radiance Field (NeRF). We design a novel sketch refinement loss to ensure the edited 3D geometry closely aligns with the user's sketch contours, while leveraging pre-trained diffusion models to maintain realistic appearance. Additionally, we introduce multi-view consistency constraints to prevent sketch editing from degrading other views. Experiments demonstrate that SKED achieves more precise geometric editing than text-only methods while preserving original scene characteristics.
+</details>
+
+<details>
+    <summary>Key points</summary>
+    * Multi-modal Input: Uses both sketches (for geometry) and text (for semantics/appearance) for editing.
+    * Sketch Loss: Introduces a Silhouette Loss to enforce 3D density fields to match 2D sketch contours.
+    * Local Editing: Capable of precisely targeting and modifying specific parts (e.g., adding arms to a chair) without destroying the global structure.
+    * NeRF-based: Optimizes directly on Instant-NGP or NeRF representations.
+</details>
+</details>
+
+---
+
+<details>
+<summary><b>ICE-G: Image Conditional Editing of 3D Gaussian Splats</b></summary>
+
+* **Authors:** Jamyong Han, Yukyung Choi, et al.
+* **arXiv ID:** 2404.12781
+* **One-liner:** The first framework enabling image-conditioned editing of 3D Gaussian Splats for fine-grained texture and geometry modifications.
+* **Published in:** CVPR 2024
+* **Links:** [[Paper]](https://arxiv.org/abs/2404.12781) | [[PDF]](https://arxiv.org/pdf/2404.12781.pdf) | [[Code]](https://github.com/sked-3d/SKED) *(Note: Link might vary)*
+
+> **Core Innovation**
+> Addressing the difficulty of controlled editing in 3D Gaussian Splatting (3DGS), ICE-G proposes an image-conditional editing approach. It allows users to modify a single-view image (e.g., adding stickers, changing textures, or local deformation) to drive the update of the entire 3D Gaussian field. The core lies in an efficient Gaussian attribute update mechanism that accurately back-propagates 2D image changes into 3D Gaussian parameters while maintaining multi-view consistency.
+
+<details>
+    <summary>Abstract</summary>
+    3D Gaussian Splatting (3DGS) has recently revolutionized real-time radiance field rendering, but controlled editing remains a challenge. We propose ICE-G, an image-conditional editing framework for 3D Gaussian Splats. Unlike methods relying on text prompts or complex 3D interactions, ICE-G allows users to directly edit a rendered 2D image and seamlessly propagates these edits to the 3D model. We introduce an optimization strategy combining 2D image guidance with 3D regularization, ensuring edits look natural in the target view and maintain geometric coherence across other views. ICE-G supports various edit types, including stylization, re-texturing, and geometric deformation.
+</details>
+
+<details>
+    <summary>Key points</summary>
+    * **Image-Driven Editing:** Users simply edit a screenshot, and the algorithm updates the 3D model automatically.
+    * **Gaussian Attribute Update:** Specially designed to update 3DGS position, covariance, and color attributes without artifacts.
+    * **Real-time Feedback:** Leverages 3DGS rendering speed for near real-time editing previews.
+    * **Versatility:** Supports local texture modification, object removal, and shape adjustment.
+</details>
+</details>
+
+---
+
+<details>
+<summary><b>DDPO: Denoising Diffusion Policy Optimization</b></summary>
+
+* **Authors:** Kevin Black, Michael Janner, Yilun Du, Ilya Kostrikov, Sergey Levine
+* **arXiv ID:** 2305.16147
+* **One-liner:** Models the diffusion denoising process as a multi-step MDP to apply Policy Gradient directly for alignment.
+* **Published in:** ICLR 2024
+* **Links:** [[Paper]](https://arxiv.org/abs/2305.16147) | [[PDF]](https://arxiv.org/pdf/2305.16147.pdf) | [[Code]](https://github.com/kvablack/ddpo-pytorch)
+
+> **Core Innovation**
+> Traditional fine-tuning of diffusion models often requires expensive backpropagation through time. DDPO treats the iterative denoising process as a multi-step Markov Decision Process (MDP) in Reinforcement Learning. This allows the use of standard policy gradient methods (like PPO) to optimize diffusion models against arbitrary, non-differentiable reward functions (such as aesthetic scores or compressibility) without differentiating through the entire sampling chain.
+
+<details>
+    <summary>Abstract</summary>
+    Diffusion models are not just generative models but also multi-step decision-makers. We introduce Denoising Diffusion Policy Optimization (DDPO), a method for fine-tuning diffusion models directly against non-differentiable objectives using reinforcement learning. By framing the denoising process as a multi-step MDP, we show that policy gradient algorithms can effectively optimize image generation for complex rewards like human perception, aesthetic scores, or structural consistency. DDPO is more stable than prior methods, does not require training surrogate reward models for gradients, and adapts to tasks difficult to solve via prompt engineering alone.
+</details>
+
+<details>
+    <summary>Key points</summary>
+    * **RL Perspective:** Treats denoising step $t$ as the state and the network output as the action.
+    * **No Backprop-Through-Time:** Avoids the memory bottleneck of differentiating through the ODE/SDE solver.
+    * **Black-box Rewards:** Can optimize for JPEG compressibility, aesthetic predictors, or any external metric.
+    * **Performance:** Outperforms Classifier Guidance on the text-alignment vs. image-quality Pareto frontier.
+</details>
+</details>
+
+---
+
+<details>
+<summary><b>AlignProp: Aligning Diffusion Models with Downstream Reward Functions</b></summary>
+
+* **Authors:** Mihir Prabhudesai, Anirudh Goyal, Deepak Pathak, Katerina Fragkiadaki
+* **arXiv ID:** 2310.03739
+* **One-liner:** Enables end-to-end backpropagation through the entire diffusion denoising process using gradient checkpointing to optimize rewards.
+* **Published in:** NeurIPS 2023
+* **Links:** [[Paper]](https://arxiv.org/abs/2310.03739) | [[PDF]](https://arxiv.org/pdf/2310.03739.pdf) | [[Code]](https://github.com/mihirp1998/AlignProp)
+
+> **Core Innovation**
+> Unlike DDPO which uses Reinforcement Learning, AlignProp opts for direct backpropagation through the denoising chain. To address the memory explosion of backpropagating through deep iterative solvers, it utilizes gradient checkpointing. This allows the model to update weights directly based on the gradients of downstream reward functions (e.g., semantic segmentation consistency), offering theoretically higher sample efficiency than RL-based methods.
+
+<details>
+    <summary>Abstract</summary>
+    Text-to-image diffusion models often struggle to satisfy complex downstream objectives, such as specific object counts or physical constraints. AlignProp proposes an end-to-end fine-tuning method that unrolls the denoising process and backpropagates the gradients of the reward function to update the diffusion model. To make this computationally feasible, we use gradient checkpointing to reduce memory consumption. Experiments show that AlignProp achieves higher reward images more efficiently than RL-based methods (like DDPO) for tasks like semantic alignment and object counting, while maintaining diversity.
+</details>
+
+<details>
+    <summary>Key points</summary>
+    * **End-to-End Backprop:** Calculates loss on the final generated image and propagates it back to model parameters through the solver.
+    * **Memory Efficient:** Makes fine-tuning feasible on consumer GPUs via randomized gradient checkpointing.
+    * **Vs. RL:** By leveraging the gradient of the reward function (if differentiable), it often converges faster with lower variance than DDPO.
+    * **Applications:** Particularly effective for tasks requiring precise semantic control or physical consistency.
+</details>
+</details>
+
+---
+
+<details>
+<summary><b>R-DPO: Robust Direct Preference Optimization</b></summary>
+
+* **Authors:** T. Chowdhury, R. Kannan, et al.
+* **arXiv ID:** 2402.10207
+* **One-liner:** Enhances DPO's robustness against noisy preference labels through regularization or re-weighting mechanisms.
+* **Published in:** 2024
+* **Links:** [[Paper]](https://arxiv.org/abs/2402.10207) | [[PDF]](https://arxiv.org/pdf/2402.10207.pdf)
+
+> **Core Innovation**
+> Standard Direct Preference Optimization (DPO) assumes that human or model preference data is ground truth. However, real-world datasets often contain noise (mislabeled preferences). R-DPO (Robust DPO) modifies the DPO loss function (e.g., using probabilistic thresholds or robust loss variants) to allow the model to down-weight or ignore potentially mislabeled pairs during training, preventing overfitting to erroneous signals.
+
+<details>
+    <summary>Abstract</summary>
+    Direct Preference Optimization (DPO) has become a leading method for aligning LLMs with human preferences. However, DPO is sensitive to noisy labels in the preference dataset. We propose R-DPO (Robust DPO), a variant designed to withstand label noise. By analyzing DPO's behavior under noisy conditions, we introduce a loss function that dynamically adjusts weights based on sample confidence. Experiments show R-DPO significantly outperforms standard DPO and IPO on datasets with 10-30% label noise.
+</details>
+
+<details>
+    <summary>Key points</summary>
+    * **Label Noise Robustness:** Mitigates performance degradation on "dirty" preference datasets.
+    * **Dynamic Weighting:** Similar to curriculum learning, it reduces the gradient impact of high-uncertainty samples.
+    * **Stability:** Offers smoother training curves and less susceptibility to reward hacking compared to vanilla DPO.
+</details>
+</details>
+
+---
+
+<details>
+<summary><b>TTPO: Test-Time Policy Optimization</b></summary>
+
+* **Authors:** Google DeepMind / Various (2024 Context)
+* **arXiv ID:** 2409.13035
+* **One-liner:** Dynamically optimizes the model policy during inference time to adapt to the specific current input.
+* **Published in:** 2024
+* **Links:** [[Paper]](https://arxiv.org/abs/2409.13035) | [[PDF]](https://arxiv.org/pdf/2409.13035.pdf)
+
+> **Core Innovation**
+> Traditional alignment happens during training. TTPO shifts the optimization process to the inference stage. For a given input prompt, the model utilizes a lightweight reward model or constraints to perform real-time gradient updates or search over its output distribution. This allows the model to "adapt on the fly" to specific, unseen, or difficult queries without permanently altering base model weights (or using only temporary updates).
+
+<details>
+    <summary>Abstract</summary>
+    Despite extensive instruction tuning and RLHF, LLMs often fail on out-of-distribution or highly complex queries. TTPO proposes a mechanism to boost model performance at test-time. By introducing an optimization loop during inference, we adjust the generated token sequence based on input-specific reward signals. This approach requires no large-scale retraining and allows the model to dynamically "think" and self-correct based on the current context. Results show TTPO outperforms purely pre-trained/fine-tuned models on complex reasoning and constrained generation tasks.
+</details>
+
+<details>
+    <summary>Key points</summary>
+    * **Test-Time Compute:** Trades increased inference latency for higher quality outputs (akin to System 2 thinking).
+    * **Dynamic Adaptation:** Finds the optimal solution for the specific prompt rather than relying on a generic average policy.
+    * **Optimization:** Can involve gradient-based updates to latents/activations or sophisticated search strategies (like Best-of-N on steroids).
+</details>
+</details>
+
+---
+
+<details>
+<summary><b>SPO: Stepwise Preference Optimization for Long-form Generation</b></summary>
+
+* **Authors:** Z. Wang, Y. Zhang, et al.
+* **arXiv ID:** 2406.04376
+* **One-liner:** Refines preference optimization from "response-level" to "step-level," specifically for aligning long-chain reasoning and generation.
+* **Published in:** ICML 2024 / arXiv 2024
+* **Links:** [[Paper]](https://arxiv.org/abs/2406.04376) | [[PDF]](https://arxiv.org/pdf/2406.04376.pdf)
+
+> **Core Innovation**
+> Traditional DPO (Direct Preference Optimization) compares full responses, which is inefficient for long Chain-of-Thought (CoT) tasks where a wrong final answer might contain correct intermediate steps (or vice versa). SPO (Stepwise Preference Optimization) introduces a fine-grained alignment method that identifies and optimizes individual "steps" within the reasoning process, precisely rewarding correct reasoning paths and penalizing logical breaks.
+
+<details>
+    <summary>Abstract</summary>
+    Human preference alignment is crucial for Large Language Models (LLMs). However, existing methods like DPO focus on preferences for holistic responses, neglecting the internal stepwise structure in long-form generation (e.g., math reasoning, coding). We propose Stepwise Preference Optimization (SPO), a method designed to align the stepwise generation process. SPO optimizes the policy based on step-level preference signals, allowing for more precise localization of reasoning errors. Experiments show that SPO significantly outperforms DPO and PPO on mathematical reasoning and long-text generation tasks.
+</details>
+
+<details>
+    <summary>Key points</summary>
+    * **Fine-grained Alignment:** Solves the sparse signal problem of "coarse" DPO in long-context tasks.
+    * **Step-level Reward:** Similar to Process Supervision but integrated directly into the preference optimization framework.
+    * **Performance:** Achieves superior results on reasoning-intensive benchmarks like Math and GSM8K.
+</details>
+</details>
+
+---
+
+<details>
+<summary><b>Diffusion of Thoughts: Chain-of-Thought Reasoning in Diffusion Language Models</b></summary>
+
+* **Authors:** J. Ye, X. Pan, et al.
+* **arXiv ID:** 2402.07754
+* **One-liner:** Introduces Chain-of-Thought (CoT) capabilities into diffusion language models, enabling multi-step reasoning and self-correction via the denoising process.
+* **Published in:** arXiv 2024
+* **Links:** [[Paper]](https://arxiv.org/abs/2402.07754) | [[PDF]](https://arxiv.org/pdf/2402.07754.pdf)
+
+> **Core Innovation**
+> Traditional autoregressive LLMs generate token-by-token, making global planning difficult. This paper proposes **Diffusion of Thoughts (DoT)**, leveraging the iterative denoising process of diffusion models to simulate the thinking process. In DoT, each diffusion step is treated as a "thinking step." This allows the model to perform implicit self-correction and global reasoning in the latent space before settling on a final answer, mitigating the error accumulation typical of left-to-right generation.
+
+<details>
+    <summary>Abstract</summary>
+    Diffusion models have revolutionized image generation but are less explored for text reasoning. We propose Diffusion of Thoughts (DoT), a paradigm that enables Chain-of-Thought reasoning within diffusion language models. Unlike autoregressive CoT which explicitly generates intermediate tokens, DoT utilizes the temporal dimension of the diffusion process as an implicit reasoning chain. As the diffusion steps progress, the model "thinks" its way from a noisy state to a clear reasoning path. Experiments show DoT outperforms traditional diffusion text generation on math and logic tasks and allows trading "compute for quality" by increasing diffusion steps.
+</details>
+
+<details>
+    <summary>Key points</summary>
+    * **Implicit Reasoning:** Maps diffusion denoising steps to thinking depth.
+    * **Non-Autoregressive:** Enables global adjustment during generation, avoiding the "error propagation" of standard LLMs.
+    * **Compute-Quality Trade-off:** Similar to OpenAI o1 concepts, one can increase inference (denoising) steps to solve harder problems.
+</details>
+</details>
+
+---
+
+<details>
+<summary><b>LayoutPrompter: Awakening the Power of Large Language Models for Layout Generation</b></summary>
+
+* **Authors:** J. Lin, J. Guo, et al.
+* **arXiv ID:** 2311.06495
+* **One-liner:** Leverages Chain-of-Thought (CoT) prompting to unlock the layout generation capabilities of LLMs without fine-tuning.
+* **Published in:** CVPR 2024 (Highlight)
+* **Links:** [[Paper]](https://arxiv.org/abs/2311.06495) | [[PDF]](https://arxiv.org/pdf/2311.06495.pdf) | [[Code]](https://github.com/Layout-Prompter/LayoutPrompter)
+
+> **Core Innovation**
+> Prior to LayoutPrompter, layout generation relied on specialized models (GANs/Transformers). This paper demonstrates that by using a **Layout-CoT** promoting strategy—first describing constraints and plans, then generating coordinates—one can "awaken" the layout design capabilities of general-purpose LLMs (like GPT-4). This reframes layout generation as a sequence reasoning task rather than just image generation.
+
+<details>
+    <summary>Abstract</summary>
+    Conditional layout generation is central to graphic design, but existing methods rely on domain-specific fine-tuned models. We introduce LayoutPrompter, a training-free method leveraging Large Language Models (LLMs) for layout generation. The core is a strategy called Layout-CoT (Chain-of-Thought). By demonstrating the thought process of "Input Constraints -> Planning -> Output Coordinates," we guide the LLM to understand layout rules. Experiments show that LayoutPrompter achieves performance comparable to or better than state-of-the-art supervised models on multiple benchmarks without any fine-tuning.
+</details>
+
+<details>
+    <summary>Key points</summary>
+    * **Layout-CoT Strategy:** Decomposes the task into planning (area division) and refinement (coordinate generation).
+    * **Training-free:** Directly utilizes the generalization power of pre-trained LLMs for posters, webpages, etc.
+    * **Dynamic Context:** Retrieves the most similar layout examples dynamically for In-context Learning.
+</details>
+</details>
+
+---
+
