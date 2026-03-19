@@ -905,6 +905,7 @@
 * V-reasonbench: Toward unified reasoning benchmark suite for video generation models. arXiv 2025.
 * GGbench: A geometric generative reasoning benchmark for unified multimodal models. arXiv 2025.
 * Tempviz: On the evaluation of temporal knowledge in text-to-image models. arXiv 2026.
+* OpenWorldLib: Research on World Models Is Not Merely Injecting World Knowledge into Specific Tasks. arXiv 2026.
 
 </details>
 
@@ -946,14 +947,6 @@
 <summary>Key points</summary>
 [要点列举主要贡献]
 </details>
-
----
-
-## ⭐ Star History
-
-如果这个项目对您的研究或理解有帮助，请给我们一个 Star ⭐️！
-
-[![Star History Chart](https://api.star-history.com/svg?repos=opendatalab-raiser/awesome-world-model-evolution&type=Date)](https://star-history.com/#opendatalab-raiser/awesome-world-model-evolution&Date)
 
 ---
 
