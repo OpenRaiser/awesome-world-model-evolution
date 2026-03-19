@@ -960,9 +960,7 @@ A true world model benchmark should evaluate:
 * V-reasonbench: Toward unified reasoning benchmark suite for video generation models. arXiv 2025.
 * GGbench: A geometric generative reasoning benchmark for unified multimodal models. arXiv 2025.
 * Tempviz: On the evaluation of temporal knowledge in text-to-image models. arXiv 2026.
-
- ROVER，UniSandbox ,  PhysDreamer. VR-Bench , VBench ,PhysBench
-  TiViBench, WEAVE, Thinking with Video, V-ReasonBench, GGBench , TempViz
+* OpenWorldLib: Research on World Models Is Not Merely Injecting World Knowledge into Specific Tasks. arXiv 2026.
 
 </details>
 
@@ -992,14 +990,6 @@ We welcome contributions of all forms! Including but not limited to:
 - Maintain entries in alphabetical or importance order
 - Ensure links are valid and point to official resources
 - Use English for descriptions
-
----
-
-## ⭐ Star History
-
-If this project helps you, please give us a Star ⭐️!
-
-[![Star History Chart](https://api.star-history.com/svg?repos=opendatalab-raiser/awesome-world-model-evolution&type=Date)](https://star-history.com/#opendatalab-raiser/awesome-world-model-evolution&Date)
 
 ---
 
