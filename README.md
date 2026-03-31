@@ -925,6 +925,7 @@ Models designed for robotic control and autonomous agents that must integrate pe
 * Advancing Open-source World Models (LingBot-World), arXiv 2026.
 * 3D-VLA: A 3D Vision-Language-Action Generative World Model, ICML 2024.
 * DriveVLM: The Convergence of Autonomous Driving and Large Vision-Language Models, CVPR 2024.
+* Hand2World: Autoregressive Egocentric Interaction Generation via Free-Space Hand Gestures, arXiv 2026.
 
 </details>
 
